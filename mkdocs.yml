@@ -1,0 +1,80 @@
+# Project information
+site_name: Voxel Tycoon Modding Documentation
+site_description: Lean how to mod Voxel Tycoon — a tycoon strategy game about transportation, factories, and mining infinite voxel landscapes.
+site_author: Voxel Tycoon Devs
+site_url: https://voxeltycoon.xyz
+
+# Repository
+repo_name: voxeltycoon/docs
+repo_url: https://github.com/voxeltycoon/docs
+
+# Copyright
+copyright: Copyright &copy; 2016 - 2020 Voxel Tycoon Devs
+
+# Configuration
+theme:
+  name: material
+  language: en
+  logo: images/logo.png
+  favicon: images/favicon.png
+  palette:
+    primary: white
+    accent: green
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    tabs: true
+
+# Extras
+extra:
+  social:
+    - icon: fontawesome/brands/steam
+      link: https://voxeltycoon.xyz/buy
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/voxeltycoon
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/voxeltycoon
+    - icon: fontawesome/brands/facebook
+      link: https://facebook.com/voxeltycoon
+    - icon: fontawesome/brands/reddit
+      link: https://reddit.com/voxeltycoon
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized
+  - awesome-pages
+
+# Google Analytics
+google_analytics:
+  - UA-XXXXXXXX-X
+  - auto
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - meta
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.tilde
