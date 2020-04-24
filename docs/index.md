@@ -17,7 +17,7 @@ This section covers essential concepts of modding Voxel Tycoon.
 
 This section contains official and community guides helping you to get started with different aspects of Voxel Tycoon modding.
 
-<a class="md-button" href="/guides/how-to-publish-your-mod/">Go to  Guides</a>
+<a class="md-button" href="/guides/content-mods/creating-your-first-building-mod/">Go to  Guides</a>
 
 ## Assets
 
