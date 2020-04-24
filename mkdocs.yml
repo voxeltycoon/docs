@@ -49,7 +49,7 @@ plugins:
 
 # Google Analytics
 google_analytics:
-  - UA-XXXXXXXX-X
+  - UA-37507673-9
   - auto
 
 # Extensions
