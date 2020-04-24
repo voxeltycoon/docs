@@ -2,7 +2,7 @@
 site_name: Voxel Tycoon Modding Documentation
 site_description: Lean how to mod Voxel Tycoon — a tycoon strategy game about transportation, factories, and mining infinite voxel landscapes.
 site_author: Voxel Tycoon Devs
-site_url: https://voxeltycoon.xyz
+site_url: https://docs.voxeltycoon.xyz
 
 # Repository
 repo_name: voxeltycoon/docs
