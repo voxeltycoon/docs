@@ -23,8 +23,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  features:
-    tabs: true
+# features:
+#   tabs: true - search not working for some reason when tabs are ebabled
 
 # Extras
 extra:
