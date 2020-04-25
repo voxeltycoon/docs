@@ -26,6 +26,9 @@ theme:
 # features:
 #   tabs: true - search not working for some reason when tabs are ebabled
 
+extra_css:
+  - stylesheets/extra.css
+
 # Extras
 extra:
   social:
@@ -38,7 +41,7 @@ extra:
     - icon: fontawesome/brands/facebook
       link: https://facebook.com/voxeltycoon
     - icon: fontawesome/brands/reddit
-      link: https://reddit.com/voxeltycoon
+      link: https://reddit.com/voxeltycoon      
 
 plugins:
   - search

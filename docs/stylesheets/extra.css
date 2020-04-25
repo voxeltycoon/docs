@@ -1,0 +1,9 @@
+[data-md-color-primary=white] .md-header {
+  border-bottom: solid 1px #ccc;
+  box-shadow: none;
+}
+
+.md-header[data-md-state=shadow] {
+    box-shadow: none;
+    transition: none;
+}
