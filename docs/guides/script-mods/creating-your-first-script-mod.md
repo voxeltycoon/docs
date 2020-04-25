@@ -1,3 +1,5 @@
+# Creating your first script mod
+
 ## Introduction
 
 This tutorial will guide you through the process of creating your first script mod for Voxel Tycoon.

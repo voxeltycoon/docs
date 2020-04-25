@@ -1,3 +1,5 @@
+# Animating locomotive rods
+
 !!! info
     This guide is authored by Voxel Tycoon community member **scailman**.
 

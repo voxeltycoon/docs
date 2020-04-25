@@ -1,6 +1,4 @@
----
-title: Asset URI
----
+# Asset URI
 
 **Asset URI** is a unique identifier of the asset. It, in particular, used to reference one asset from another.
 
