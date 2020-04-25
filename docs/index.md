@@ -2,7 +2,7 @@ title: Home
 
 # Welcome!
 
-This is the official modding documenation for Voxel Tycoon — a tycoon strategy game about transportation, factories, and mining infinite voxel landscapes.
+This is the official modding documentation for [Voxel Tycoon](https://voxeltycoon.xyz) — a tycoon strategy game about transportation, factories, and mining infinite voxel landscapes.
 
 !!! note "Work in progress"
     The documentation is - obviously - work in progress. Please feel free to [contribute](https://github.com/voxeltycoon/docs)!
