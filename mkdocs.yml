@@ -24,7 +24,7 @@ theme:
     text: Roboto
     code: Roboto Mono
 # features:
-#   tabs: true - search not working for some reason when tabs are ebabled
+#   tabs: true - search not working for some reason when tabs are enabled
 
 extra_css:
   - stylesheets/extra.css
@@ -41,7 +41,7 @@ extra:
     - icon: fontawesome/brands/facebook
       link: https://facebook.com/voxeltycoon
     - icon: fontawesome/brands/reddit
-      link: https://reddit.com/voxeltycoon      
+      link: https://reddit.com/voxeltycoon
 
 plugins:
   - search
