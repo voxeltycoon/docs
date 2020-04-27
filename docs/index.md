@@ -28,7 +28,7 @@ This section contains a reference for assets used by the game.
 ## Other resources
 
 - [Discord Server](https://discord.gg/voxeltycoon) (look for `#modding` channel)
-- [Suggestions tracker](https://github.com/voxeltycoon/suggestions/issues)
+- [Suggestion tracker](https://github.com/voxeltycoon/suggestions/issues)
 - [Bug tracker](https://github.com/voxeltycoon/bug-tracker/issues)
 - [Voxel Tycoon changelog](https://voxeltycoon.xyz/changelog)
 - [Official website](https://voxeltycoon.xyz)
