@@ -32,9 +32,9 @@ All the elements that make up a vehicle must have the coordinate axis in positio
 
 While creating the model of  the locomotive, we can place each part in place to verify that the proportions are correct, but when exporting the model, each part must be placed as in the previous image.
 
-![](/images/train-mod-tutorial/image3.png)
-
-The locomotive should be placed facing the front to the right (view left in the viewport in 3ds max. In other programs, the placement of the viewports may vary).
+!!! important
+    The locomotive should be placed facing the front to the right (view left in the viewport in 3ds max. In other programs, the placement of the viewports may vary).
+    ![](/images/train-mod-tutorial/image3.png)
 
 Texturing the model is done in the same way as a building. For this, I recommend reading the guide [Creating your first content mod](Creating-your-first-content-mod).
 
@@ -57,8 +57,8 @@ The file contains only two parameters:
 }
 ```
 
-* `MeshUri`: This parameter specifies the path where the axis `.obj` file is located. The first part of the path is the mod folder.
-* `WheelRadius`: This parameter is the radius of the wheel that we can obtain from the 3d program.
+* **MeshUri**: This parameter specifies the path where the axis `.obj` file is located. The first part of the path is the mod folder.
+* **WheelRadius**: This parameter is the radius of the wheel that we can obtain from the 3d program.
 
 ## Bogie settings (`.trainbogie` asset )
 
@@ -89,10 +89,10 @@ A bogie can have from 1 to n specified axes.
 
 ![](/images/train-mod-tutorial/image8.png)
 
-* `MeshUri`: Specifies the path of the bogie mesh file. If the value is null, it means that the bogie has no mesh.
-* `Uri`: Specifies the path of the axis .trainaxle file that we explained in the previous point. If the value is null, the wheel mesh will not appear.
-* `AxleOffet`: Specify the axis position.
-* `Offset`: Defines the axle position along the Z-axis of the bogie. A positive value means that it is the front wheel of the bogie and a negative value that is the rear wheel.
+* **MeshUri**: Specifies the path of the bogie mesh file. If the value is null, it means that the bogie has no mesh.
+* **Uri**: Specifies the path of the axis .trainaxle file that we explained in the previous point. If the value is null, the wheel mesh will not appear.
+* **AxleOffet**: Specify the axis position.
+* **Offset**: Defines the axle position along the Z-axis of the bogie. A positive value means that it is the front wheel of the bogie and a negative value that is the rear wheel.
 
 ## Engine settings  (`.trainunit` asset )
 
@@ -147,33 +147,33 @@ Some sections are null, that means it hasn't been specified, or that this parame
 }
 ```
 
-* `Smoke`: Specifies the position of the smoke in diesel and steam locomotives.
-* `Bogies (Array)`:
-  * `Uri`: Path of the .trainbogie asset.
-  * `Anchor1`: Used to indicate the position of the bogie. For example, if the locomotive has 3 bogies, the values ​​of Anchor1 and Anchor2 will be: `true - false`, `false - false`, `false - true`.
-  * `Anchor2`: Used to indicate the position of the bogie. For example, if the locomotive has 2 bogies, the values ​​of Anchor1 and Anchor2 will be: `true - false`, `false - true`.
-  * `Offset`: Bogie position respecting to the locomotive along the Z-axis. A positive value means it's the front bogie and a negative value the rear bogie.
-* `AudioUri`: Path of the .trainaudio asset.
-* `Type`: Locomotive type. Possible values: Steam, Diesel, Electric, Unpowered.
-* `Length`: By default the value is null, the game automatically calculates the length of the locomotive using the boundingbox of the `.obj` file. When a value is specified, it is because we want the locomotive to overlap with another element as it happens with the semi-trailers of the trucks.
-* `VelocityLimit`: Maximum locomotive speed specified in km / h.
-* `Power`: Max engine power specified in Kw.
-* `Weight`: Locomotive weight specified in Tonnes.
-* `Price`: Locomotive cost. The default is null. The game calculates the price based on the power of the locomotive and economic fluctuations.
-* `PriceMultiplier`: Locomotive cost price multiplier. By default is null.
-* `RunningCosts`: Locomotive operating cost. By default is null.
-* `RunningCostsMultiplier`: Locomotive operating cost multiplier. By default is null.
-* `Liveries (Array)`:
-  * `MeshUri`: Path of the `.obj` file of the locomotive body.
-* `Coupling1Uri`: Path of the front locomotive `.traincoupling` asset.
-* `Coupling2Uri`: Path of the rear locomotive `.traincoupling` asset.
+* **Smoke**: Specifies the position of the smoke in diesel and steam locomotives.
+* **Bogies** (Array):
+  * **Uri**: Path of the .trainbogie asset.
+  * **Anchor1**: Used to indicate the position of the bogie. For example, if the locomotive has 3 bogies, the values ​​of Anchor1 and Anchor2 will be: `true - false`, `false - false`, `false - true`.
+  * **Anchor2**: Used to indicate the position of the bogie. For example, if the locomotive has 2 bogies, the values ​​of Anchor1 and Anchor2 will be: `true - false`, `false - true`.
+  * **Offset**: Bogie position respecting to the locomotive along the Z-axis. A positive value means it's the front bogie and a negative value the rear bogie.
+* **AudioUri**: Path of the .trainaudio asset.
+* **Type**: Locomotive type. Possible values: Steam, Diesel, Electric, Unpowered.
+* **Length**: By default the value is null, the game automatically calculates the length of the locomotive using the boundingbox of the `.obj` file. When a value is specified, it is because we want the locomotive to overlap with another element as it happens with the semi-trailers of the trucks.
+* **VelocityLimit**: Maximum locomotive speed specified in km / h.
+* **Power**: Max engine power specified in Kw.
+* **Weight**: Locomotive weight specified in Tonnes.
+* **Price**: Locomotive cost. The default is null. The game calculates the price based on the power of the locomotive and economic fluctuations.
+* **PriceMultiplier**: Locomotive cost price multiplier. By default is null.
+* **RunningCosts**: Locomotive operating cost. By default is null.
+* **RunningCostsMultiplier**: Locomotive operating cost multiplier. By default is null.
+* **Liveries** (Array):
+  * **MeshUri**: Path of the `.obj` file of the locomotive body.
+* **Coupling1Uri**: Path of the front locomotive `.traincoupling` asset.
+* **Coupling2Uri**: Path of the rear locomotive `.traincoupling` asset.
 > **Note:** Only cars with the same couplings could be coupled.
-* `Hidden`: This parameter makes the locomotive not appear in the vehicle purchase menu. By default the value is `false`, but if the steam locomotive is articulated or requieres separate units (eg. Steam locomotive engine & tender, or fixed car suburban/subway set), this value will be `true`.
-* `Submeshes (Array)`: This section specifies the different meshes and animation parameters of the meshes of the rods of steam locomotives (see [Animating locomotive rods](Animating-locomotive-rods) guide).
-* `AnimationReferenceWheelRadius`: Specifies the radius that the connecting rods will follow in the locomotives that have connecting rods.
-* `ResearchUri`: If the locomotive needs to be researched in order to use it, this parameter indicates the path of the .research asset.
-* `Explosive`: This parameter causes the locomotive or vehicle to explode in the event of an accident causing damage to the surrounding area. By default the value is false.
-* `ExplosionForce`: Force of the explosion caused in the event of an accident if the explosive parameter is `true`. Setting it too high can cause the blast to damage the terrain so much that it destroys cities and entire resource deposits.
+* **Hidden**: This parameter makes the locomotive not appear in the vehicle purchase menu. By default the value is `false`, but if the steam locomotive is articulated or requieres separate units (eg. Steam locomotive engine & tender, or fixed car suburban/subway set), this value will be `true`.
+* **Submeshes** (Array): This section specifies the different meshes and animation parameters of the meshes of the rods of steam locomotives (see [Animating locomotive rods](Animating-locomotive-rods) guide).
+* **AnimationReferenceWheelRadius**: Specifies the radius that the connecting rods will follow in the locomotives that have connecting rods.
+* **ResearchUri**: If the locomotive needs to be researched in order to use it, this parameter indicates the path of the .research asset.
+* **Explosive**: This parameter causes the locomotive or vehicle to explode in the event of an accident causing damage to the surrounding area. By default the value is false.
+* **ExplosionForce**: Force of the explosion caused in the event of an accident if the explosive parameter is `true`. Setting it too high can cause the blast to damage the terrain so much that it destroys cities and entire resource deposits.
 
 ## Coupling setting (`.traincouplig` asset)
 
@@ -237,9 +237,9 @@ The parameters of this asset are quite explanatory.
 
 They indicate the minimum and maximum number of vehicles that make up the composition, what type they are (.trainunit asset) and whether they are inverted or not, such as the case of the rear locomotive.
 
-* `ResearchUri`: If the consist or locomotive needs to be researched in order to use it, this parameter indicates the path of the .research asset.
+* **ResearchUri**: If the consist or locomotive needs to be researched in order to use it, this parameter indicates the path of the .research asset.
 
-* `Hidden`: This parameter makes the locomotive not appear in the vehicle purchase menu. By default the value is false, but if the steam locomotive is made up of the locomotive and the tender, this value will be true.
+* **Hidden**: This parameter makes the locomotive not appear in the vehicle purchase menu. By default the value is false, but if the steam locomotive is made up of the locomotive and the tender, this value will be true.
 
 ## Localization (`.strings` asset)
 
@@ -263,4 +263,5 @@ You can have as many `.strings` assets as languages you want in the same folder.
 ##  Further reading
 
 * [How to publish your mod](/guides/how-to-publish-your-mod)
-* [Animating locomotive rods](/guides/content-mods/animating-locomotive-rods)
+* [Animating locomotive rods](/guides/content-mods/animating-locomotive-rods/)
+* [Creating your first truck mod](/guides/content-mods/creating-your-first-truck-mod/)

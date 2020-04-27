@@ -105,22 +105,22 @@ To edit the game files we only need a text editor such as Notepad ++, or Visual 
 
 This is what the `.house` asset file looks like and contains the following parameters:
 
-* `PopulationRange`: Indicates the maximum and minimum population that the building will have when the city generates it.
-* `CanHaveDemand` (true / false): This parameter indicates if it can request a product, as is the case in stores. In the rest of the buildings, the value is false.
+* **PopulationRange**: Indicates the maximum and minimum population that the building will have when the city generates it.
+* **CanHaveDemand** (`true`/`false`): This parameter indicates if it can request a product, as is the case in stores. In the rest of the buildings, the value is false.
 
-* `Size`: Specifies the size of the building. These are the values we use in the reference plane. For the value of Y, the height, we must always round up, for example, if our building measures 2.4m (2.4 voxels) we must always indicate a value of 3.
+* **Size**: Specifies the size of the building. These are the values we use in the reference plane. For the value of Y, the height, we must always round up, for example, if our building measures 2.4m (2.4 voxels) we must always indicate a value of 3.
 
-* `Liveries`: In this parameter, the path of the mesh of our building that we exported previously is indicated. Note that the first part of MeshUri (arab_buildinhgs), is the name of our mod followed by the name of the `.obj` file.
+* **Liveries**: In this parameter, the path of the mesh of our building that we exported previously is indicated. Note that the first part of MeshUri (arab_buildinhgs), is the name of our mod followed by the name of the `.obj` file.
 
-	* `default_night_1(..3)`: is the name of the different liveries to show the windows lit at night. 	There are three liveries that match the unwrap of the model.
+	* **default_night_1(..3)**: is the name of the different liveries to show the windows lit at night. 	There are three liveries that match the unwrap of the model.
 
-	* `MeshVariant`: Indicates the name of the variant specified in the `.obj`.meta file that defines the colors of the model that we will explain later.
+	* **MeshVariant**: Indicates the name of the variant specified in the `.obj.meta` file that defines the colors of the model that we will explain later.
 
-* `Price`: It is the price of the building, in this case, the demolition price.
+* **Price**: It is the price of the building, in this case, the demolition price.
 
-* `RunningCosts`: It is the operating cost of the building. As it is a city building, it has no effect on the player's finances. A null value indicates that loc automatically calculates the game.
+* **RunningCosts**: It is the operating cost of the building. As it is a city building, it has no effect on the player's finances. A null value indicates that loc automatically calculates the game.
 
-* `Hidden` (true / false); This parameter indicates whether the object will appear in the game or in menus as a buildable asset in the player's menu. Hide assets are still visible in-game, eg. locomotives in recipes.
+* **Hidden** (`true`/`false`); This parameter indicates whether the object will appear in the game or in menus as a buildable asset in the player's menu. Hide assets are still visible in-game, eg. locomotives in recipes.
 
 ## Building settings (`.citybuildingspawninfo` asset)
 
@@ -137,10 +137,10 @@ This file tells the game how our building should generate when a city grows.
 }
 ```
 
-* `Uri`: It is the path of the .house file that we explained previously.
-* `ProportionalCount`: It is the proportion in which the building will appear with respect to the total number of buildings in the city.
-* `Density`: Density of buildings in the city of this type.
-* `Biomes`: This parameter indicates in which specific biome the building should appear. If the value is "null", the building will appear in all biomes, but if a biome is specified, the building will only appear in that biome as the buildings in the Arctic biome.
+* **Uri**: It is the path of the .house file that we explained previously.
+* **ProportionalCount**: It is the proportion in which the building will appear with respect to the total number of buildings in the city.
+* **Density**: Density of buildings in the city of this type.
+* **Biomes**: This parameter indicates in which specific biome the building should appear. If the value is "null", the building will appear in all biomes, but if a biome is specified, the building will only appear in that biome as the buildings in the Arctic biome.
 
 ## Asset Editor
 
@@ -230,8 +230,8 @@ The different colors of the palette are saved in the `.obj.meta` file and contai
 ```
 
 The code above shows the color palette of the example building. We skipped some colors at the beginning because the listing would be too large but you can see the section of the variants.
-In the variant section, the names of the three variants are defined for the night windows that appeared in the `.house` file named `night_1 - 3`.
-In this case, the values 8, 9, 10 correspond to the colors in the upper section which are the ones to be replaced by the colors and parameters of the Variants section. To know what values you have to specify, the colors range from 0 to 15 (16 in total) but the easy way to find the correct colors is by the hexadecimal value. If color `#272727` was used, all colors with this value represent windows. Another parameter that can identify the windows in the Glossiness parameter, which in the rest of the colors will be 0.0.
+In the variants section, the names of the three variants are defined for the night windows that appeared in the `.house` file named `night_1 - 3`.
+In this case, the values 8, 9, 10 correspond to the colors in the upper section which are the ones to be replaced by the colors and parameters of the Variants section. To know what values you have to specify, the colors range from 0 to 15 (16 in total) but the easy way to find the correct colors is by the hexadecimal value. If color `#272727` was used, all colors with this value represent windows. Another parameter that can identify the windows in the Glossiness parameter, which in the rest of the colors will be `0.0`.
 
 
 ## Localization (`.strings` asset)
@@ -257,6 +257,7 @@ The location file allows indicating the name that will be shown in the menus or 
 ```
 
 The image shows that the indicated `LocaleUri` language is English and in the Items section the path of all the files of the different objects created is specified, in this case several buildings (`.house`), a biome (`.biome`) and a plant (`.plant`).
+
 You can have as many `.strings` files as languages you want to have in the mod.
 
 ## Publishing the mod
