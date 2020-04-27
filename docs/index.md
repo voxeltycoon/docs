@@ -13,7 +13,7 @@ This section covers essential concepts of modding Voxel Tycoon.
 
 <a class="md-button" href="/concepts/asset-uri/">Go to Concepts </a>
 
-## Gudes
+## Guides
 
 This section contains official and community guides helping you to get started with different aspects of Voxel Tycoon modding.
 
