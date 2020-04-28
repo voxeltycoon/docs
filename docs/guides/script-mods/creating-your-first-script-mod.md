@@ -167,6 +167,6 @@ As a conclusion, take a look at some points that were left outside of the scope 
 * Also, there may be more than one implementation of `IMod` interface
 * Mods can read and write data to a save file using corresponding callbacks
 * To simplify subscription to Unity callbacks - such as `Update()` - Voxel Tycoon API provides handy `UpdateBehaviour` helper class. However, you can always instantiate your own MonoBehaviours as you normally do in Unity.
-* As [stated there](https://github.com/voxeltycoon/docs/wiki/.dll-asset#wheres-api-documentation), feel free to explore the game code base for existent and possible APIs, and let us know what you think!
+* As stated at [Where's API documentation?](/assets/dll-asset/#wheres-api-documentation), feel free to explore the game code base for existent and possible APIs, and let us know what you think!
 
 Happy coding! 💜
