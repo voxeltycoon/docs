@@ -13,6 +13,9 @@ After finishing this tutorial, you will know how to:
 * Setup development environment
 * Build super simple but working script mod that shows custom in-game notifications
 
+!!! tldr
+    Resulting source code, with some additions, can be found here: https://github.com/voxeltycoon/mods.
+
 ## Set up the environment
 
 Script mods can be built with any tools that could compile your source code into the .NET DLL. This ranges from full-featured IDEs like Visual Studio, to manually calling the compiler on source files.

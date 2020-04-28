@@ -31,6 +31,7 @@ This section contains a reference for assets used by the game.
 - [Suggestion tracker](https://github.com/voxeltycoon/suggestions/issues)
 - [Bug tracker](https://github.com/voxeltycoon/bug-tracker/issues)
 - [Voxel Tycoon changelog](https://voxeltycoon.xyz/changelog)
+- [Samples source code](https://github.com/voxeltycoon/mods)
 - [Official website](https://voxeltycoon.xyz)
 
 <iframe width="100%" height="210px" class="widget-steam_modal" src="https://store.steampowered.com/widget/732050/" frameborder="0"></iframe>

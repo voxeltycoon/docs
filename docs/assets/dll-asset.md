@@ -39,4 +39,4 @@ Just as you feel that you need any new APIs, events, callbacks, etc - or modific
 
 We are committed to update and extend the modding APIs along with your requests as soon as possible.
 
-Meanwhile, we suggest you to use decompilers such as [dnSpy](https://github.com/0xd4d/dnSpy) to dig into the game's code and start exploring the possibilities for modification.
+Meanwhile, we suggest you to use decompilers such as [dnSpy](https://github.com/0xd4d/dnSpy) to dig into the game's code and start exploring the possibilities for modification. Also, we've [hosted a repository](https://github.com/voxeltycoon/mods) with the source code of our official mods and samples.
