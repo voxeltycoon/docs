@@ -40,7 +40,7 @@ Then choose *Class Library (.NET Standard)* (make sure you choose C# one, not Vi
 
 ![](/images/dll-mod-tutorial/dll-mod-tutorial-2.png)
 
-Name your project and choose where it should be placed (this where your source code will be located, not the result DLL file,  so **DO NOT** choose game's *Content* folder):
+Name your project and choose where it should be placed (this is where your source code will be located, not the result DLL file,  so **DO NOT** choose game's *Content* folder):
 
 ![](/images/dll-mod-tutorial/dll-mod-tutorial-3.png)
 
