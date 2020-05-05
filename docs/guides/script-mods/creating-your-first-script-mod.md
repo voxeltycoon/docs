@@ -4,7 +4,7 @@
 
 This tutorial will guide you through the process of creating your first script mod for Voxel Tycoon.
 
-To get a common understanding of how script mods work and what is possible to be done with then, please refer [.dll asset documentation page](/assets/dll-asset).
+To get a common understanding of how script mods work and what is possible to be done with them, please refer [.dll asset documentation page](/assets/dll-asset).
 
 We assume that you have at least basic knowledge of development in C# and Unity.
 
