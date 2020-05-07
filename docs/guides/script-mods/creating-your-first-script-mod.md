@@ -40,7 +40,7 @@ Then choose *Class Library (.NET Standard)* (make sure you choose C# one, not Vi
 
 ![](/images/dll-mod-tutorial/dll-mod-tutorial-2.png)
 
-Name your project and choose where it should be placed (this is where your source code will be located, not the result DLL file,  so **DO NOT** choose game's *Content* folder):
+Name your project and choose where it should be placed (this is where your source code will be located, not the result DLL file,  so **DO NOT** choose game's `Content` folder):
 
 ![](/images/dll-mod-tutorial/dll-mod-tutorial-3.png)
 
@@ -155,7 +155,7 @@ After the build process successfully finishes, you will find the result DLL at t
 
 ### Run the game
 
-As we now have a DLL, we can put it into the game. Just copy the DLL to your mod directory inside the game's *Content* folder, just as you do with any other mod asset. Now you can run VT, and start the new game with your mod enabled.
+As we now have a DLL, we can put it into the game. Just copy the DLL to your mod directory inside the game's `Content` folder, just as you do with any other mod asset. Now you can run VT, and start the new game with your mod enabled.
 
 !!! tip
     To avoid manual copying the DLL file after every change, you can setup [post-build event](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-specify-build-events-csharp?view=vs-2019) in the project settings.
