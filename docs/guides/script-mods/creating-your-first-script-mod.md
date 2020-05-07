@@ -158,13 +158,7 @@ After the build process successfully finishes, you will find the result DLL at t
 As we now have a DLL, we can put it into the game. Just copy the DLL to your mod directory inside the game's *Content* folder, just as you do with any other mod asset. Now you can run VT, and start the new game with your mod enabled.
 
 !!! note
-    Don't forget to create a pack.json file inside the mod pack folder which will allow the game to locate and load the mod.
-example of a pack.json
-```json
-{
-    "Title" : "Hello World",
-    "Description": "Voxel Tycoon Hello World Mod"
-}
+    Don't forget to [create a `pack.json` file](/guides/how-to-publish-your-mod/#set-custom-title-and-description) inside the mod pack folder which will allow the game to locate and load the mod.
 ```
 
 !!! tip
