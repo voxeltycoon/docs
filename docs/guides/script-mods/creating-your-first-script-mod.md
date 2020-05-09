@@ -159,7 +159,6 @@ As we now have a DLL, we can put it into the game. Just copy the DLL to your mod
 
 !!! note
     Don't forget to [create a `pack.json` file](/guides/how-to-publish-your-mod/#set-custom-title-and-description) inside the mod pack folder which will allow the game to locate and load the mod.
-```
 
 !!! tip
     To avoid manual copying the DLL file after every change, you can setup [post-build event](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-specify-build-events-csharp?view=vs-2019) in the project settings.
