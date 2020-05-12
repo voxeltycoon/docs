@@ -115,7 +115,7 @@ The green rectangle indicates the length to be specified in the semitrailer leng
 * **Explosive**: Determine if the transported cargo can explode. By default the value is `false`.
 * **ExplosionForce**: Explosion force. By default the value is `null`. A very high value can cause a crater so large that it removes entire cities and industries from the map.
 
-## Truck loads (.capacities asset)
+## Truck loads (`.capacities` asset)
 
 This type of asset creates a load for items that are not visible, such as closed vans or trucks.
 For this reason, the `Items` array only shows the reference to the `.item` asset of each type of cargo.
