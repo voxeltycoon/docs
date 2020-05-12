@@ -4,7 +4,14 @@ This is the respository backing the official [modding documentation](https://doc
 
 ## How to test your contribution locally
 
+### Install
 1. [Install Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/#installation).
-2. Run `mkdocs serve`.
-3. Go to [http://localhost:8000](http://localhost:8000).
-4. Pages will automatically refresh as you apply changes to sources.
+2. Instal plugins:
+  * `pip install mkdocs-minify-plugin`
+  * `pip install mkdocs-git-revision-date-localized-plugin`
+  * `pip pip install mkdocs-awesome-pages-plugin`
+ 
+### Run
+1. Run `mkdocs serve`.
+2. Go to [http://localhost:8000](http://localhost:8000).
+3. Pages will automatically refresh as you apply changes to sources.
