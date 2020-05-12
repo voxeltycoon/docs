@@ -95,21 +95,21 @@ We always start with the Piston Rod in the centre of it's travel, and the Coupli
 ]
 ```
 
-* `MeshUri`: Path of the file that contains the mesh of the rod.
-* `PositionX`, `PositionY`, `PositionZ`: Coordinate value depending on the axis that has been indicated.
-* `RotationX`: Represents the degrees of rotation on the X-axis.
+* **MeshUri**: Path of the file that contains the mesh of the rod.
+* **PositionX**, **PositionY**, **PositionZ**: Coordinate value depending on the axis that has been indicated.
+* **RotationX**: Represents the degrees of rotation on the X-axis.
 
 Each animation is made up of eight frames ranging from 0 to 1. Each frame rotates the wheels 45 degrees clockwise.
 
-![](/images/train-tutorial/image1.png)
-![](/images/train-tutorial/image6.png)
-![](/images/train-tutorial/image7.png)
+![](/images/train-mod-tutorial/image1.png)
+![](/images/train-mod-tutorial/image6.png)
+![](/images/train-mod-tutorial/image7.png)
 
 We will start animating the coupling rod. The first thing is to turn the central wheel clockwise 45 degrees by rotating on the X-axis, and then move the coupling rod to coincide with the point of attachment of the wheel.
 
 Once we have the rod in position, we must write down the positions on the Y-axis and Z-axis, which are the values that we have to enter in the second frame of the animation of the coupling rod in the `.trainunit` asset.
 
-![](/images/train-tutorial/image2.png)
+![](/images/train-mod-tutorial/image2.png)
 
 The axes can change according to the 3d modeling program we are using, but the positions will always be the same.
 
@@ -121,6 +121,6 @@ The piston rod is the easiest animation since the position on the Y-axis does no
 
 For the main rod, we must do the same as with the coupling rod; we move it until the end coincides with the point of union with the coupling rod.
 
-![](/images/train-tutorial/image9.png)
+![](/images/train-mod-tutorial/image9.png)
 
 When we have finished the animation, we must put the rods in position `0,0,0`, now and we can export them.
