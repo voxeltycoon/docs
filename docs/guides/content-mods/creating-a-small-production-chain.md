@@ -188,7 +188,7 @@ Mines can have animated submeshes like steam locomotives and sound and smoke for
             }
         ```
 
-* **ResearchUri**: Path of the `.reserach` asset that allows the building to be researched to make it available in game.
+* **ResearchUri**: Path of the `.research` asset that allows the building to be researched to make it available in game.
 * **Size** (Array): Building size on X, Y, Z axes.
 * **Liveries** (Array): Specifies the path of the building's `.obj` file. For more information about this section read the guide: Creating your first building mod.
 * **Price**: Building purchase price.
