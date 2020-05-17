@@ -25,11 +25,11 @@ You will receive an `identity.json` file - this is your key to publishing access
 
 ### Add preview image
 
-Take a screenshot of your mod in action, and save it as `preview.png`. Drop the image into your mod's root folder. To be properly scaled in the Gallery, its dimensions should be `184х110` pixels.
+Take a screenshot of your mod in action, and save it as `preview.png`. Drop the image into your mod's root folder. It should be square and its dimensions should be at least `512x512` pixels.
 
 ### Set custom title and description
 
-Create a new `.txt` file, rename it to `pack.json`, and place it in your mod's root folder. Its contents should be set up as follows:
+Create a new `.txt` file, rename it to `mod.json`, and place it in your mod's root folder. Its contents should be set up as follows:
 
 ```json
 {

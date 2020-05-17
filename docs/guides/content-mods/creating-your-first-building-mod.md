@@ -263,7 +263,7 @@ You can have as many `.strings` files as languages you want to have in the mod.
 ## Publishing the mod
 
 Once you have finished modeling the building, configuring the different files and applying the color palette, all you have to do is create an image of the mod (`preview.png`) that will be shown in the mod finder and that must have dimensions of **184x110 pixels**.
-It is also necessary to create a `pack.json` file where the description of the mod is specified and which in turn allows the mod to appear in the mod selection window when creating a new game.
+It is also necessary to create a `mod.json` file where the description of the mod is specified and which in turn allows the mod to appear in the mod selection window when creating a new game.
 
 ```json
 {
