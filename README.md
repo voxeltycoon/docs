@@ -9,7 +9,7 @@ This is the respository backing the official [modding documentation](https://doc
 2. Instal plugins:
   * `pip install mkdocs-minify-plugin`
   * `pip install mkdocs-git-revision-date-localized-plugin`
-  * `pip pip install mkdocs-awesome-pages-plugin`
+  * `pip install mkdocs-awesome-pages-plugin`
  
 ### Run
 1. Run `mkdocs serve`.
