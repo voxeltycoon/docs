@@ -16,13 +16,33 @@ After finishing this tutorial, you will know how to:
 
 ## Main Class
 
-Lets start with renaming *Class1*.
+Start a new project and call it *"NotificationActionExample"*.
 
-Right click on *Class1* in your Solution Explorer and select *Rename*.
+An unwritten rule in programming is that you give your variables, classes, methods, etc, clear names. They should be named in such a way so that
+you know what their function is when you read their name.
+
+As you might have noticed, when we created this project, the class inside the project is named *"Class1"*.
+
+```csharp
+namespace NotificationActionExample
+{
+    public class Class1
+    {
+    }
+}
+```
+
+<br>
+
+Obviously this is not a very clear name. Lets start with renaming *Class1* and give it the name *"Main"*. The reason for this name is that usually the
+first class in your project will be your main class that manages and executes everything else. Of course you are free to call it whatever,
+it is not required to be named *"Main"* for the mod to work, just make sure the name represents the function of this class.
+
+To rename the class, right click on *Class1* in your Solution Explorer and select *Rename*.
 
 ![](/images/notification-action-tutorial/notification-action-tutorial-1.jpg)
 
-Then type in *"Main"*
+Then type in *"Main"* and press enter.
 
 >After you have pressed enter, you are asked if you want to perform a rename for all references, select **Yes**.
 
@@ -35,10 +55,11 @@ Follow these steps:
 3. Lets add some code to the `OnGameLoaded()` callback
    
    ```csharp
-    //Priority is an optional parameter
+    //Priority is an optional argument when calling the NotificationManager
     NotificationPriority priority = NotificationPriority.Default;
 
-    //Color is an optional parameter - this can cause a small issue, read below
+    //Color is an optional argument when calling the NotificationManager
+    //Beware, using Color can cause a small issue, read note below
     Color color = Company.Current.Color;
 
     string title = "Notification Action";
@@ -49,18 +70,31 @@ Follow these steps:
     ```
 
 
-    >You can also use the `var` type. Personally Im not a fan of `var`, but you are welcome to use it if you prefer using `var` instead.
+    >Instead of using `Color`, `string`, etc, you can also use the `var` type. Personally Im not a fan of `var`, but you are free to use it if you prefer using `var` instead.
     >
-    >Unfortunately nót using the `var` type can cause a small issue in this example. When adding the variable type `Color` the namespace `System.Drawing` is 
-    >added automatically, while `Company.Current.Color` returns a type `Color` which is part of the `UnityEngine` namespace.
+    >Unfortunately using `Color` instead of `var` can cause a small issue in this example. When we typed the variable type `Color`, the namespace `System.Drawing` was 
+    >automatically added, since `Color` is part of this namespace. While `Company.Current.Color` does return a value of type `Color`, it is not part of the `System.Drawing` namespace.
+    >Instead it belongs to the `UnityEngine` namespace. It is throwing an error because the value `Company.Current.Color` returns does not fit in `System.Drawing.Color`.
     >
     >There are 2 ways to fix this problem:
     >* Replace `using System.Drawing;` with `using UnityEngine;`
-    >* If you can't replace/remove the `System.Drawing` namespace declare the color-variable like: `UnityEngine.Color color = Company.Current.Color;`
+    >* If you can't replace/remove the `System.Drawing` namespace (because you might need it for something else), declare the color-variable like: `UnityEngine.Color color = Company.Current.Color;`
 
-For the actual `INotificationAction action`-variable we need to create a new class.
+<br>
+
+As stated in *"[Creating your first script mod](/guides/script-mods/creating-your-first-script-mod)"*, `NotificationManager.Current.Push()` requires 6 arguments:
+1. Priority (Optional)
+2. Color (Optional)
+3. Title
+4. Message
+5. Action
+6. Icon
+
+We have set variables for all the arguments, except *Action*. We have to create a new `Class` before we can create and set a variable for this argument.
 
 ## NotificationAction Class
+
+Lets create a new `Class`.
 
 Right click on your project in your *Solution Explorer*, then go to *Add > New Item...*
 
@@ -72,7 +106,7 @@ Then in the next window select **Class** and give it the name *NotificationActio
 
 Once you have added this new class, follow the steps below:
 
-1. Implement the `INotificationAction`-interface in the same fashion as you implemented the `IMod`-interface in the `Main`-class.
+1. Implement the `INotificationAction`-interface in the same fashion as how we implemented the `IMod`-interface in the `Main`-class.
    
     Your `NotificationAction`-class should now look like this: 
     ```csharp
@@ -96,8 +130,9 @@ Once you have added this new class, follow the steps below:
     ```
 
 2. **(Optional)** Remove the `throw new NotImplementedException();` from all 3 callbacks, to prevent any exceptions showing up in game.
-3. Lets add some code to the `Act()` callback. This is the callback that will be triggered when you click on the linked notification.
-    As an action we are going to show a new notification that lets us know that we succesfully triggered a notification action.
+3. Lets add some code to the `Act()` callback. This is the callback that will be triggered when you click on the linked notification. 
+   As an action we are going to show a new notification that tells us that we succesfully triggered a notification action.
+
     So, lets set up a new notification.
 
     ```csharp
@@ -115,7 +150,7 @@ Once you have added this new class, follow the steps below:
     ```
 
 >The `Color32`-type accepts the full RGBA values (0 - 255), while the `Color`-type only accepts values from 0 to 1.
->When you have a RGB value you want to use, it is recommended to use `Color32`, else you have to convert your RGB values
+>When you have a RGB value you want to use, it is recommended to use the `Color32`-type, else you have to convert your RGB values
 >to a value between 0 and 1. This is not difficult to do, but it requires a bit of extra work which can be avoided.
 
 Then we need to call the **Notification Manager** to actually display this notification. We do this with adding the following statement:
@@ -257,7 +292,7 @@ public class Main : IMod
 
 ## Compile and run the mod
 
-Now we can add this mod to the game an try it out.
+Now we can add this mod to the game and try it out.
 
 To read in detail how to do this, read [Creating your first script mod](/guides/script-mods/creating-your-first-script-mod) - **Run the mod**.
 
