@@ -141,7 +141,8 @@ class NotificationAction : INotificationAction
 }
 ```
 
->[How to implement an interface](https://docs.microsoft.com/en-us/visualstudio/ide/reference/implement-interface?view=vs-2019)
+!!! help
+    [How to implement an interface?](https://docs.microsoft.com/en-us/visualstudio/ide/reference/implement-interface?view=vs-2019)
 
 2. **(Optional)** Remove the `throw new NotImplementedException();` from all 3 callbacks, to prevent any exceptions showing up in game.
 3. Lets add some code to the `Act()`-callback. This is the callback that will be triggered when you click on the linked notification. 
@@ -163,20 +164,22 @@ class NotificationAction : INotificationAction
     FontIcon icon = FontIcon.FaSolid("\uf164");
     ```
 
->The `Color32`-type accepts the full RGBA values (0 - 255), while the `Color`-type only accepts values from 0 to 1.
->When you have a RGB value you want to use, it is recommended to use the `Color32`-type, else you have to convert your RGB values
->to a value between 0 and 1. This is not difficult to do, but it requires a bit of extra work which can be avoided.
+!!! note
+    The `Color32`-type accepts the full RGBA values (0 - 255), while the `Color`-type only accepts values from 0 to 1.
+    When you have a RGB value you want to use, it is recommended to use the `Color32`-type, else you have to convert your RGB values
+    to a value between 0 and 1. This is not difficult to do, but it requires a bit of extra work which can be avoided.
 
 Then we need to call the **Notification Manager** to actually display this notification. We do this with adding the following statement:
 
 `NotificationManager.Current.Push(priority, color, title, message, null, icon);`
 
->`INotificationAction action` is a required argument while calling `NotificationManager`. Since we dont have an action
->we want to happen when this notification is clicked, we just pass `null` for this argument.
+!!! note
+    `INotificationAction action` is a required argument while calling `NotificationManager`. Since we dont have an action
+    we want to happen when this notification is clicked, we just pass `null` for this argument.
 
 As a final result your `NotificationAction`-class should now look like this:
 
-```csharp
+```csharp hl_lines="17"
 class NotificationAction : INotificationAction
 {
     public void Act()
@@ -217,7 +220,8 @@ Add the following line to your `OnGameStarted()`-callback in your `Main`-Class:
 `INotificationAction action = new NotificationAction();`
 
 Your `Main`-class should now look like this:
-```csharp
+
+```csharp hl_lines="16"
 public class Main : Mod
 {
     public void OnGameStarted()
@@ -245,7 +249,8 @@ Add the following statement to your `OnGameStarted`-callback in your `Main`-Clas
 `NotificationManager.Current.Push(priority, color, title, message, action, icon);`
 
 As a final result your `Main`-class should look like this:
-```csharp
+
+```csharp hl_lines="18" 
 public class Main : Mod
 {
     public void OnGameStarted()
