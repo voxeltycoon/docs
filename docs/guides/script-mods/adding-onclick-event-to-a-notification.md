@@ -21,7 +21,7 @@ Start a new project and call it *"NotificationActionExample"*.
 An unwritten rule in programming is that you give your variables, classes, methods, etc, clear names. They should be named in such a way so that
 you know what their function is when you read their name.
 
-As you might have noticed, when we created this project, the class inside the project is named *"Class1"*.
+As you might have noticed, when we created this project, the class inside the project is named *"Class1"* by default.
 
 ```csharp
 namespace NotificationActionExample
@@ -35,7 +35,7 @@ namespace NotificationActionExample
 <br>
 
 Obviously this is not a very clear name. Lets start with renaming *Class1* and give it the name *"Main"*. The reason for this name is that usually the
-first class in your project will be your main class that manages and executes everything else. Of course you are free to call it whatever,
+first class in your project will be your main class which manages and executes everything else. Of course you are free to call it whatever,
 it is not required to be named *"Main"* for the mod to work, just make sure the name represents the function of this class.
 
 To rename the class, right click on *Class1* in your Solution Explorer and select *Rename*.
@@ -46,43 +46,55 @@ Then type in *"Main"* and press enter.
 
 >After you have pressed enter, you are asked if you want to perform a rename for all references, select **Yes**.
 
-Now we can set up our notification, just like in the *"[Creating your first script mod](/guides/script-mods/creating-your-first-script-mod)"* guide.
+Now we need to get access to callbacks which allows us to execute code at a certain point in the games lifecycle. To get access to these callbacks we need
+to inherit from the `Mod`-class.
 
-Follow these steps:
+Where it says `public class Main`, change this to `public class Main : Mod`.
 
-1. Implement the `IMod`-interface.
-2. **(Optional)** Remove the `throw new NotImplementedException();` from all 4 callbacks, to prevent any exceptions showing up in game.
-3. Lets add some code to the `OnGameLoaded()` callback
+The `Mod`-class gives us access to a couple of callbacks. For this example we are interested in the `OnGameStarted()`-callback.
+
+Inside your `Main`-class, add:
+
+```csharp
+protected override void OnGameStarted()
+{
+            
+}
+```
+
+Now we can set up our notification inside `OnGameStarted()`, just like in the *"[Creating your first script mod](/guides/script-mods/creating-your-first-script-mod)"* guide.
+
+Lets add the following code to `OnGameStarted()`:
+
    
-   ```csharp
-    //Priority is an optional argument when calling the NotificationManager
-    NotificationPriority priority = NotificationPriority.Default;
+```csharp
+//Priority is an optional argument when calling the NotificationManager
+NotificationPriority priority = NotificationPriority.Default;
 
-    //Color is an optional argument when calling the NotificationManager
-    //Beware, using Color can cause a small issue, read note below
-    Color color = Company.Current.Color;
+//Color is an optional argument when calling the NotificationManager
+//Beware, using Color can cause a small issue, read note below
+Color color = Company.Current.Color;
+string title = "Notification Action";
+string message = "Click this notification to trigger a Notification Action";
 
-    string title = "Notification Action";
-    string message = "Click this notification to trigger a Notification Action";
+//Lets use a bell as an icon
+FontIcon icon = FontIcon.FaSolid("\uf0f3");
+```
+<br>
 
-    //Lets use a bell as an icon
-    FontIcon icon = FontIcon.FaSolid("\uf0f3");
-    ```
-
-
-    >Instead of using `Color`, `string`, etc, you can also use the `var` type. Personally Im not a fan of `var`, but you are free to use it if you prefer using `var` instead.
-    >
-    >Unfortunately using `Color` instead of `var` can cause a small issue in this example. When we typed the variable type `Color`, the namespace `System.Drawing` was 
-    >automatically added, since `Color` is part of this namespace. While `Company.Current.Color` does return a value of type `Color`, it is not part of the `System.Drawing` namespace.
-    >Instead it belongs to the `UnityEngine` namespace. It is throwing an error because the value `Company.Current.Color` returns does not fit in `System.Drawing.Color`.
-    >
-    >There are 2 ways to fix this problem:
-    >* Replace `using System.Drawing;` with `using UnityEngine;`
-    >* If you can't replace/remove the `System.Drawing` namespace (because you might need it for something else), declare the color-variable like: `UnityEngine.Color color = Company.Current.Color;`
+>Instead of using `Color`, `string`, etc, you can also use the `var` type. Personally Im not a fan of `var`, but you are free to use it if you prefer using `var` instead.
+>
+>Unfortunately using `Color` instead of `var` can cause a small issue in this example. When we added the variable type `Color`, the namespace `System.Drawing` was 
+>automatically added, since `Color` is part of this namespace. While `Company.Current.Color` does return a value of type `Color`, it is not part of the `System.Drawing` namespace,
+>instead it belongs to the `UnityEngine` namespace. It is throwing an error because the value `Company.Current.Color` returns does not fit in `System.Drawing.Color`.
+>
+>There are 2 ways to fix this problem:
+>* Replace `using System.Drawing;` with `using UnityEngine;`
+>* If you can't replace/remove the `System.Drawing` namespace (because you might need it for something else), declare the color-variable like: `UnityEngine.Color color = Company.Current.Color;`
 
 <br>
 
-As stated in *"[Creating your first script mod](/guides/script-mods/creating-your-first-script-mod)"*, `NotificationManager.Current.Push()` requires 6 arguments:
+`NotificationManager.Current.Push()` requires 6 arguments:
 1. Priority (Optional)
 2. Color (Optional)
 3. Title
@@ -90,7 +102,7 @@ As stated in *"[Creating your first script mod](/guides/script-mods/creating-you
 5. Action
 6. Icon
 
-We have set variables for all the arguments, except *Action*. We have to create a new `Class` before we can create and set a variable for this argument.
+We have set variables for all the arguments, except *Action*. Before we can create and set a variable for this argument, we have to create a new `Class`.
 
 ## NotificationAction Class
 
@@ -106,34 +118,38 @@ Then in the next window select **Class** and give it the name *NotificationActio
 
 Once you have added this new class, follow the steps below:
 
-1. Implement the `INotificationAction`-interface in the same fashion as how we implemented the `IMod`-interface in the `Main`-class.
+1. Implement the `INotificationAction`-interface.
    
-    Your `NotificationAction`-class should now look like this: 
-    ```csharp
-    class NotificationAction : INotificationAction
+After you implemented the interface, your `NotificationAction`-class should now look like this: 
+```csharp
+class NotificationAction : INotificationAction
+{
+    public void Act()
     {
-        public void Act()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Read(StateBinaryReader reader)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Write(StateBinaryWriter writer)
-        {
-            throw new NotImplementedException();
-        }
+        throw new NotImplementedException();
     }
-    ```
+
+    public void Read(StateBinaryReader reader)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Write(StateBinaryWriter writer)
+    {
+        throw new NotImplementedException();
+    }
+}
+```
+
+<br>
+
+>[How to implement an interface](https://docs.microsoft.com/en-us/visualstudio/ide/reference/implement-interface?view=vs-2019)
 
 2. **(Optional)** Remove the `throw new NotImplementedException();` from all 3 callbacks, to prevent any exceptions showing up in game.
-3. Lets add some code to the `Act()` callback. This is the callback that will be triggered when you click on the linked notification. 
-   As an action we are going to show a new notification that tells us that we succesfully triggered a notification action.
+3. Lets add some code to the `Act()`-callback. This is the callback that will be triggered when you click on the linked notification. 
+   As an action we are going to show another notification that tells us that we succesfully triggered a notification action.
 
-    So, lets set up a new notification.
+    Lets set up a new notification:
 
     ```csharp
     //Priority is an optional parameter
@@ -148,6 +164,8 @@ Once you have added this new class, follow the steps below:
     //Lets use a thumbs up as an icon
     FontIcon icon = FontIcon.FaSolid("\uf164");
     ```
+
+<br>
 
 >The `Color32`-type accepts the full RGBA values (0 - 255), while the `Color`-type only accepts values from 0 to 1.
 >When you have a RGB value you want to use, it is recommended to use the `Color32`-type, else you have to convert your RGB values
@@ -200,19 +218,14 @@ Now that we have a class which can go in the `INotificationAction action`-variab
 
 ## Implement the Notification Action
 
-Add the following line to your `OnGameLoaded`-callback in your `Main`-Class: 
+Add the following line to your `OnGameStarted()`-callback in your `Main`-Class: 
 
 `INotificationAction action = new NotificationAction();`
 
 Your `Main`-class should now look like this:
 ```csharp
-public class Main : IMod
+public class Main : Mod
 {
-    public void OnBeforeGameLoad()
-    {
-          
-    }
-
     public void OnGameLoaded()
     {
         //Priority is an optional parameter
@@ -228,16 +241,6 @@ public class Main : IMod
 
         INotificationAction action = new NotificationAction();
     }
-
-    public void Read(StateBinaryReader reader)
-    {
-           
-    }
-
-    public void Write(StateBinaryWriter writer)
-    {
-
-    }
 }
 ```
 
@@ -251,13 +254,8 @@ Add the following statement to your `OnGameLoaded`-callback in your `Main`-Class
 
 As a final result your `Main`-class should look like this:
 ```csharp
-public class Main : IMod
+public class Main : Mod
 {
-    public void OnBeforeGameLoad()
-    {
-          
-    }
-
     public void OnGameLoaded()
     {
         //Priority is an optional parameter
@@ -274,16 +272,6 @@ public class Main : IMod
         INotificationAction action = new NotificationAction();
 
         NotificationManager.Current.Push(priority, color, title, message, action, icon);
-    }
-
-    public void Read(StateBinaryReader reader)
-    {
-           
-    }
-
-    public void Write(StateBinaryWriter writer)
-    {
-
     }
 }
 ```
@@ -308,4 +296,4 @@ Follow the steps below:
 ## Play around
 
 If you're not yet very familiar with coding, I suggest to play around some more to see what other awesome things you can do with
-*Notification Actions*. This is a good way to get beter with coding.
+*Notification Actions*. This is a good way to get better with coding.
