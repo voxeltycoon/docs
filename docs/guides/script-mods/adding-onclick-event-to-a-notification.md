@@ -9,10 +9,11 @@ After finishing this tutorial, you will know how to:
 * Create a class with the INotificationAction Interface
 * Add an action to your Notifications
 
->This guide continues on [Creating your first script mod](/guides/script-mods/creating-your-first-script-mod).
->If you dont know how to setup the environment or how to get a mod in game, please follow this guide first.
+!!! note
+    This guide continues on [Creating your first script mod](/guides/script-mods/creating-your-first-script-mod).
+    If you dont know how to setup the environment or how to get a mod in game, please follow this guide first.
 
->This guide is based on Visual Studio 2019 Community Edition
+    This guide is based on Visual Studio 2019 Community Edition
 
 ## Main Class
 
@@ -32,8 +33,6 @@ namespace NotificationActionExample
 }
 ```
 
-<br>
-
 Obviously this is not a very clear name. Lets start with renaming *Class1* and give it the name *"Main"*. The reason for this name is that usually the
 first class in your project will be your main class which manages and executes everything else. Of course you are free to call it whatever,
 it is not required to be named *"Main"* for the mod to work, just make sure the name represents the function of this class.
@@ -44,7 +43,8 @@ To rename the class, right click on *Class1* in your Solution Explorer and selec
 
 Then type in *"Main"* and press enter.
 
->After you have pressed enter, you are asked if you want to perform a rename for all references, select **Yes**.
+!!! note
+    After you have pressed enter, you are asked if you want to perform a rename for all references, select **Yes**.
 
 Now we need to get access to callbacks which allows us to execute code at a certain point in the games lifecycle. To get access to these callbacks we need
 to inherit from the `Mod`-class.
@@ -80,21 +80,21 @@ string message = "Click this notification to trigger a Notification Action";
 //Lets use a bell as an icon
 FontIcon icon = FontIcon.FaSolid("\uf0f3");
 ```
-<br>
 
->Instead of using `Color`, `string`, etc, you can also use the `var` type. Personally Im not a fan of `var`, but you are free to use it if you prefer using `var` instead.
->
->Unfortunately using `Color` instead of `var` can cause a small issue in this example. When we added the variable type `Color`, the namespace `System.Drawing` was 
->automatically added, since `Color` is part of this namespace. While `Company.Current.Color` does return a value of type `Color`, it is not part of the `System.Drawing` namespace,
->instead it belongs to the `UnityEngine` namespace. It is throwing an error because the value `Company.Current.Color` returns does not fit in `System.Drawing.Color`.
->
->There are 2 ways to fix this problem:
->* Replace `using System.Drawing;` with `using UnityEngine;`
->* If you can't replace/remove the `System.Drawing` namespace (because you might need it for something else), declare the color-variable like: `UnityEngine.Color color = Company.Current.Color;`
+!!! note
+    Instead of using `Color`, `string`, etc, you can also use the `var` type. Personally Im not a fan of `var`, but you are free to use it if you prefer using `var` instead.
 
-<br>
+    Unfortunately using `Color` instead of `var` can cause a small issue in this example. When we added the variable type `Color`, the namespace `System.Drawing` was 
+    automatically added, since `Color` is part of this namespace. While `Company.Current.Color` does return a value of type `Color`, it is not part of the `System.Drawing` namespace,
+    instead it belongs to the `UnityEngine` namespace. It is throwing an error because the value `Company.Current.Color` returns does not fit in `System.Drawing.Color`.
+
+    There are 2 ways to fix this problem:
+
+    * Replace `using System.Drawing;` with `using UnityEngine;`
+    * If you can't replace/remove the `System.Drawing` namespace (because you might need it for something else), declare the color-variable like: `UnityEngine.Color color = Company.Current.Color;`
 
 `NotificationManager.Current.Push()` requires 6 arguments:
+
 1. Priority (Optional)
 2. Color (Optional)
 3. Title
@@ -141,8 +141,6 @@ class NotificationAction : INotificationAction
 }
 ```
 
-<br>
-
 >[How to implement an interface](https://docs.microsoft.com/en-us/visualstudio/ide/reference/implement-interface?view=vs-2019)
 
 2. **(Optional)** Remove the `throw new NotImplementedException();` from all 3 callbacks, to prevent any exceptions showing up in game.
@@ -164,8 +162,6 @@ class NotificationAction : INotificationAction
     //Lets use a thumbs up as an icon
     FontIcon icon = FontIcon.FaSolid("\uf164");
     ```
-
-<br>
 
 >The `Color32`-type accepts the full RGBA values (0 - 255), while the `Color`-type only accepts values from 0 to 1.
 >When you have a RGB value you want to use, it is recommended to use the `Color32`-type, else you have to convert your RGB values
@@ -212,8 +208,6 @@ class NotificationAction : INotificationAction
 }
 ```
 
-<br>
-
 Now that we have a class which can go in the `INotificationAction action`-variable, we can implement it.
 
 ## Implement the Notification Action
@@ -226,7 +220,7 @@ Your `Main`-class should now look like this:
 ```csharp
 public class Main : Mod
 {
-    public void OnGameLoaded()
+    public void OnGameStarted()
     {
         //Priority is an optional parameter
         NotificationPriority priority = NotificationPriority.Default;
@@ -244,11 +238,9 @@ public class Main : Mod
 }
 ```
 
-<br>
-
 Now we have all the required arguments to call the **Notification Manager**.
 
-Add the following statement to your `OnGameLoaded`-callback in your `Main`-Class:
+Add the following statement to your `OnGameStarted`-callback in your `Main`-Class:
 
 `NotificationManager.Current.Push(priority, color, title, message, action, icon);`
 
@@ -256,7 +248,7 @@ As a final result your `Main`-class should look like this:
 ```csharp
 public class Main : Mod
 {
-    public void OnGameLoaded()
+    public void OnGameStarted()
     {
         //Priority is an optional parameter
         NotificationPriority priority = NotificationPriority.Default;
@@ -276,19 +268,18 @@ public class Main : Mod
 }
 ```
 
-<br>
-
 ## Compile and run the mod
 
 Now we can add this mod to the game and try it out.
 
-To read in detail how to do this, read [Creating your first script mod](/guides/script-mods/creating-your-first-script-mod) - **Run the mod**.
+!!! tip
+    To read in detail how to do this, check [Run the mod](/guides/script-mods/creating-your-first-script-mod/#run-the-mod) section of the [Creating your first script mod](/guides/script-mods/creating-your-first-script-mod) guide.
 
 Follow the steps below:
 
 1. Build your project into a .dll-file
 2. Locate your .dll-file and place it in `/voxel-tycoon/content/<your_mod_folder>`
-3. Create a [mod.json file](/guides/how-to-publish-your-mod)
+3. Create a [mod.json file](/guides/how-to-publish-your-mod/#set-custom-title-and-description)
 4. Start Voxel Tycoon and start a new game with your just created mod activated
 5. Wait for your game to load...
 6. **CLICK THAT NOTIFICATION!!!**
