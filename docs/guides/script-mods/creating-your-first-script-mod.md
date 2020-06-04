@@ -58,30 +58,18 @@ The project for our mod is ready! Now it's time to make it do something.
 
 As a simple but working example let's make our mod to show a custom in-game notification when the game is loaded.
 
-### Implement the `IMod` interface
+### Inherit from the `Mod` abstract class
 
-To let the game know what code it should run from  our script mod, we need to implement the `IMod` interface, situated at the `VoxelTycoon.Modding` namespace.
+To let the game know what code it should run from our script mod, we need to [inherit](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance) from the `Mod` class, situated at the `VoxelTycoon.Modding` namespace.
 
-While `IMod` interface exposes several callbacks, for our mod we need to write custom logic only in `OnGameLoaded` one, and left other methods blank:
+`Mod` class exposes several callbacks, but for our mod it's enough to [override](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/override) just `OnGameStarted` one:
 
 ```csharp
-    public class Class1 : IMod
+    public class Class1 : Mod
     {
-        public void OnBeforeGameLoad()
-        {
-        }
-
-        public void OnGameLoaded()
+        protected override void OnGameStarted()
         {
             // That's where our mod logic goes.
-        }
-
-        public void Read(StateBinaryReader reader)
-        {
-        }
-
-        public void Write(StateBinaryWriter writer)
-        {
         }
     }
 ```
@@ -102,7 +90,7 @@ public Notification Push(NotificationPriority priority,
 Let's call it from our mod's code:
 
 ```csharp
-public void OnGameLoaded()
+protected override void OnGameStarted()
 {
     // Maximum priority so we never miss it.
     var priority = NotificationPriority.Critical;
@@ -170,9 +158,8 @@ Congratulations! You've just created such an amazing mod, just as you are! ✨
 As a conclusion, take a look at some points that were left outside of the scope of this tutorial:
 
 * One DLL can contain not just one code file, but any amount you need
-* Also, there may be more than one implementation of `IMod` interface
+* Explore other callbacks `Mod` class provides, like `OnUpdate()` or `Initialize()` (called before any assets loaded)
 * Mods can read and write data to a save file using corresponding callbacks
-* To simplify subscription to Unity callbacks - such as `Update()` - Voxel Tycoon API provides handy `UpdateBehaviour` helper class. However, you can always instantiate your own MonoBehaviours as you normally do in Unity.
 * As stated at [Where's API documentation?](/assets/dll-asset/#wheres-api-documentation), feel free to explore the game code base for existent and possible APIs, and let us know what you think!
 
 Happy coding! 💜
