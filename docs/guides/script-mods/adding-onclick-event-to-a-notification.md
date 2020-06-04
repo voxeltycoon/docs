@@ -1,5 +1,8 @@
 # Adding an OnClick-event to a Notification
 
+!!! info
+    This guide is authored by Voxel Tycoon community member **Nebruzias**.
+
 ## Introduction
 
 This tutorial will guide you through the process of triggering an action whenever you click on a Notification.
