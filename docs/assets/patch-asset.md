@@ -90,15 +90,15 @@ Don't forget to remove those files before publishing your mod, and disable this 
 !!! tip "Pro Tip"   
     You can use online JSONPath evaluators like https://jsonpath.com/ to test complex pathes.
 
-Find property of an object in an array by index:
+Find a property of an object in an array by index:
 
 `ItemsPerDay[0].CountMultiplier`
 
-Find property of all objects in an array:
+Find a property of all objects in an array:
 
 `ItemsPerDay[*].CountMultiplier`
 
-Find property of an objects in an array which has specific value on property:
+Find a property of an object in an array which has specific property value:
 
 `ItemsPerDay[?(@.Uri=='base/tv.item')].CountMultiplier`
 
