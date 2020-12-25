@@ -84,3 +84,22 @@ You can actually see how target assets look after all patches are applied to the
 Now, every time you load or start a new game with your mod enabled, the game will write target assets in their final form (with all patches applied) to `<original_filename>.patched.json`.
 
 Don't forget to remove those files before publishing your mod, and disable this option after debugging is completed to avoid the additional performance cost.
+
+## Advanced path examples
+
+!!! tip "Pro Tip"   
+    You can use online JSONPath evaluators like https://jsonpath.com/ to test complex pathes.
+
+Find property of an object in an array by index:
+
+`ItemsPerDay[0].CountMultiplier`
+
+Find property of all objects in an array:
+
+`ItemsPerDay[*].CountMultiplier`
+
+Find property of an objects in an array which has specific value on property:
+
+`ItemsPerDay[?(@.Uri=='base/tv.item')].CountMultiplier`
+
+`ItemsPerDay[?(@.CountMultiplier>0.5)].CountMultiplier`
