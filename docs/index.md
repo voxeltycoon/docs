@@ -11,19 +11,25 @@ This is the official modding documentation for [Voxel Tycoon](https://voxeltycoo
 
 This section covers essential concepts of modding Voxel Tycoon.
 
-<a class="md-button" href="/concepts/asset-uri/">Go to Concepts </a>
+<a class="md-button" href="/concepts/asset-uri/">Go to Concepts</a>
 
 ## Guides
 
 This section contains official and community guides helping you to get started with different aspects of Voxel Tycoon modding.
 
-<a class="md-button" href="/guides/content-mods/creating-your-first-building-mod/">Go to  Guides</a>
+<a class="md-button" href="/guides/content-mods/creating-your-first-building-mod/">Go to Guides</a>
 
 ## Assets
 
 This section contains a reference for assets used by the game.
 
 <a class="md-button" href="/assets/dll-asset/">Go to Assets</a>
+
+## Documentation
+
+This section contains documentation for game's API
+
+<a class="md-button" href="/documentation/">Go To Documentation</a>
 
 ## Other resources
 
