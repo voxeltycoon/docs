@@ -10,10 +10,10 @@ Since [0.79](//voxeltycoon.xyz/changelog#0.79) you can create not only content-b
 
 ### Core concepts
 
-* The DLL file you want to get in the end essentially is a [.NET class library](https://docs.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio?tabs=csharp) targeting **.NET Standart 2.0** (or .NET 4.x) and containing one or more implementations of the `IMod` interface provided by Voxel Tycoon API.
-* In order to access Voxel Tycoon and Unity APIs you need to reference `Assembly-CSharp.dll` and `UnityEngine.CoreModule.dll` libraries that can be found in `VoxelTycoon_Data/Managed` directory inside the game folder. 
-* Also, you might want to reference `UnityEngine.UI.dll` if you want to work with the game UI.
-* After you compile your library, the resulted .dll file is ready to be put into your mod directory and loaded by the game. 
+- The DLL file you want to get in the end essentially is a [.NET class library](https://docs.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio?tabs=csharp) targeting **.NET Standard 2.1** (or .NET 4.x) and containing one or more implementations of the [`Mod`](/documentation/VoxelTycoon/Modding/Mod) interface provided by Voxel Tycoon API.
+- In order to access Voxel Tycoon and Unity APIs you need to reference `Assembly-CSharp.dll` and `UnityEngine.CoreModule.dll` libraries that can be found in `VoxelTycoon_Data/Managed` directory inside the game folder.
+- Also, you might want to reference `UnityEngine.UI.dll` if you want to work with the game UI.
+- After you compile your library, the resulted .dll file is ready to be put into your mod directory and loaded by the game.
 
 ### Step-by-step tutorial
 
@@ -33,10 +33,10 @@ However, any [.NET language](https://en.wikipedia.org/wiki/List_of_CLI_languages
 
 ### Where's API documentation?
 
-There are almost no documented APIs available currently in Voxel Tycoon. Still, **we urge you to start creating script mods right now**, so we can build an extendable, flexible, and well-featured platform together with you.
+The documentation for Voxel Tycoon is being created [here](/documentation/). Still, **we urge you to start creating script mods right now**, so we can build an extendable, flexible, and well-featured platform together with you.
 
 Just as you feel that you need any new APIs, events, callbacks, etc - or modifications of existing ones - do not hesitate to let us know by creating an issue on [suggestion tracker](https://github.com/voxeltycoon/suggestions/issues). Also, feel free to chat with us and community directly on our [Discord Server](//discord.gg/voxeltycoon).
 
 We are committed to update and extend the modding APIs along with your requests as soon as possible.
 
-Meanwhile, we suggest you to use decompilers such as [dnSpy](https://github.com/0xd4d/dnSpy) to dig into the game's code and start exploring the possibilities for modification. Also, we've [hosted a repository](https://github.com/voxeltycoon/mods) with the source code of our official mods and samples.
+Meanwhile, we suggest you to use decompilers such as [dnSpy](https://github.com/0xd4d/dnSpy) or [JetBrains dotPeek](https://www.jetbrains.com/decompiler/) to dig into the game's code and start exploring the possibilities for modification. Also, we've [hosted a repository](https://github.com/voxeltycoon/mods) with the source code of our official mods and samples.
