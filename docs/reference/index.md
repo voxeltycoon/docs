@@ -1,4 +1,4 @@
-# API Intro
+# Introduction
 
 ## Where to begin?
 

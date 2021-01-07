@@ -33,7 +33,7 @@ However, any [.NET language](https://en.wikipedia.org/wiki/List_of_CLI_languages
 
 ### Where's API documentation?
 
-The documentation for Voxel Tycoon is being created [here](/documentation/). Still, **we urge you to start creating script mods right now**, so we can build an extendable, flexible, and well-featured platform together with you.
+The documentation for Voxel Tycoon API is being created [here](/reference/). Still, **we urge you to start creating script mods right now**, so we can build an extendable, flexible, and well-featured platform together with you.
 
 Just as you feel that you need any new APIs, events, callbacks, etc - or modifications of existing ones - do not hesitate to let us know by creating an issue on [suggestion tracker](https://github.com/voxeltycoon/suggestions/issues). Also, feel free to chat with us and community directly on our [Discord Server](//discord.gg/voxeltycoon).
 

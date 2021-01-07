@@ -29,7 +29,7 @@ This section contains a reference for assets used by the game.
 
 This section contains documentation for game's API
 
-<a class="md-button" href="/documentation/">Go To Documentation</a>
+<a class="md-button" href="/reference/">Go To API reference</a>
 
 ## Other resources
 
