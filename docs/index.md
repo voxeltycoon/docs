@@ -25,11 +25,11 @@ This section contains a reference for assets used by the game.
 
 <a class="md-button" href="/assets/dll-asset/">Go to Assets</a>
 
-## Documentation
+## Reference
 
-This section contains documentation for game's API
+This section contains Voxel Tycoon API reference.
 
-<a class="md-button" href="/reference/">Go To API reference</a>
+<a class="md-button" href="/reference/">Go to Reference</a>
 
 ## Other resources
 
