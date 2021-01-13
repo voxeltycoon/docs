@@ -18,8 +18,8 @@ theme:
   logo: images/logo.png
   favicon: images/favicon.png
   palette:
-    primary: white
-    accent: green
+    scheme: vt
+
   font:
     text: Roboto
     code: Roboto Mono
