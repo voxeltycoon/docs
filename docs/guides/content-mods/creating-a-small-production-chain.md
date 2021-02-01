@@ -543,4 +543,4 @@ That's it!
 
 ##  Further reading
 
-* [How to publish your mod](/guides/how-to-publish-your-mod)
+* [How to publish your mod](/guides/basics/how-to-publish-your-mod)

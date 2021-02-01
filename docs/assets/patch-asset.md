@@ -38,7 +38,7 @@ Adds provided values to a collection at the path.
 
 | Argument | Description |
 | --- | --- |
-| **TargetAssetUri** : *string* | The [URI](/concepts/asset-uri) of the target asset. |
+| **TargetAssetUri** : *string* | The [URI][1] of the target asset. |
 | **Path** : *string* | [JsonPath](https://goessner.net/articles/JsonPath/) to a collection (or collections) where values should be added. |
 | **Values** : *array* | Values to add. |
 
@@ -48,7 +48,7 @@ Sets provided value to a property at the path.
 
 | Argument | Description |
 | --- | --- |
-| **TargetAssetUri** : *string* | The [URI](/concepts/asset-uri) of the target asset. |
+| **TargetAssetUri** : *string* | The [URI][1] of the target asset. |
 | **Path** : *string* | [JsonPath](https://goessner.net/articles/JsonPath/) to a property (or properties) which value should be set. |
 | **Value** : *any* | Value to be set. |
 
@@ -58,7 +58,7 @@ Removes value at the path.
 
 | Argument | Description |
 | --- | --- |
-| **TargetAssetUri** : *string* | The [URI](/concepts/asset-uri) of the target asset. |
+| **TargetAssetUri** : *string* | The [URI][1] of the target asset. |
 | **Path** : *string* | [JsonPath](https://goessner.net/articles/JsonPath/) to a value (or values) which should be removed. |
 
 ### Merge
@@ -67,7 +67,7 @@ Merges provided object with an object at the path (as described [here](https://w
 
 | Argument | Description |
 | --- | --- |
-| **TargetAssetUri** : *string* | The [URI](/concepts/asset-uri) of the target asset. |
+| **TargetAssetUri** : *string* | The [URI][1] of the target asset. |
 | **Path** : *string* | [JsonPath](https://goessner.net/articles/JsonPath/) to an object (or objects) where provided object should be merged. |
 | **Value** : *object* | Object to be merged. |
 | **ArrayHandling** : *string* | One of the values described [here](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_MergeArrayHandling.htm).<br>*Optional* (default: `"Concat"`) |
@@ -103,3 +103,5 @@ Find a property of an object in an array which has specific property value:
 `ItemsPerDay[?(@.Uri=='base/tv.item')].CountMultiplier`
 
 `ItemsPerDay[?(@.CountMultiplier>0.5)].CountMultiplier`
+
+[1]: /guides/basics/asset-uri

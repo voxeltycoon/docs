@@ -1,5 +1,8 @@
 # How to publish your mod
 
+!!! warning "Obsolete"
+    This guide is for versions prior `0.85`. New guide is coming soon.
+
 ## Introduction
 
 This step-by-step guide is intended for mod creators who want to feature their creations on the in-game Mod Gallery. Like this:

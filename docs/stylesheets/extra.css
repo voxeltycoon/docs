@@ -85,7 +85,7 @@
   background: #0d0d19;
 }
 
-.md-content :not(.md-content__button):not(.md-icon)[href^='http']::after {
+.md-content :not(.md-button):not(.md-content__button):not(.md-icon)[href^='http']::after {
   background-color: var(--md-primary-fg-color);
   display: inline-block;
   width: 0.7rem;
@@ -95,4 +95,13 @@
   -webkit-mask-size: contain;
   mask-size: contain;
   content: "";
+}
+
+.md-content a:not(.md-button):not(.md-content__button):not(.md-icon) {
+  border-bottom: 2px solid #8768ff44;
+  margin-bottom: -2px;
+}
+
+.md-content a:not(.md-button):not(.md-content__button):not(.md-icon):hover {
+  border-bottom: 2px solid transparent;
 }

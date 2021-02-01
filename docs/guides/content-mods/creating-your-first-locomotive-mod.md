@@ -261,6 +261,6 @@ You can have as many `.strings` assets as languages you want in the same folder.
 
 ##  Further reading
 
-* [How to publish your mod](/guides/how-to-publish-your-mod)
+* [How to publish your mod](/guides/basics/how-to-publish-your-mod)
 * [Animating locomotive rods](/guides/content-mods/animating-locomotive-rods/)
 * [Creating your first truck mod](/guides/content-mods/creating-your-first-truck-mod/)

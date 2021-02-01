@@ -397,4 +397,4 @@ The tunnels allowed us to overcome obstacles such as other tracks or roads. For 
 
 ##  Further reading
 
-* [How to publish your mod](/guides/how-to-publish-your-mod)
+* [How to publish your mod](/guides/basics/how-to-publish-your-mod)

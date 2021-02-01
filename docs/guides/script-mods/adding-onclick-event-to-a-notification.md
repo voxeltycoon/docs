@@ -64,7 +64,7 @@ protected override void OnGameStarted()
 }
 ```
 
-Now we can set up our notification inside `OnGameStarted()`, just like in the *"[Creating your first script mod](/guides/script-mods/creating-your-first-script-mod)"* guide.
+Now we can set up our notification inside `OnGameStarted()`, just like in the "[Creating your first script mod](/guides/script-mods/creating-your-first-script-mod)" guide.
 
 Lets add the following code to `OnGameStarted()`:
 
@@ -285,8 +285,8 @@ Now we can add this mod to the game and try it out.
 Follow the steps below:
 
 1. Build your project into a .dll-file
-2. Locate your .dll-file and place it in `/voxel-tycoon/content/<your_mod_folder>`
-3. Create a [mod.json file](/guides/how-to-publish-your-mod/#set-custom-title-and-description)
+2. Locate your .dll-file and place it in `Content/<your_mod_folder>`
+3. Create a [mod.json file](/guides/basics/mods.json)
 4. Start Voxel Tycoon and start a new game with your just created mod activated
 5. Wait for your game to load...
 6. **CLICK THAT NOTIFICATION!!!**

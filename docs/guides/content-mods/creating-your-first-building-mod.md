@@ -289,5 +289,5 @@ It is also necessary to create a `mod.json` file where the description of the mo
 
 ## Further reading
 
-* [How to publish your mod](/guides/how-to-publish-your-mod)
+* [How to publish your mod](/guides/basics/how-to-publish-your-mod)
 - [Creating your first locomotive mod](/guides/content-mods/creating-your-first-locomotive-mod)

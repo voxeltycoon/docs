@@ -9,7 +9,7 @@ repo_name: voxeltycoon/docs
 repo_url: https://github.com/voxeltycoon/docs
 
 # Copyright
-copyright: Copyright &copy; 2016 - 2020 Voxel Tycoon Devs
+copyright: Copyright &copy; 2016 - 2021 Voxel Tycoon Devs
 
 # Configuration
 theme:
@@ -25,6 +25,7 @@ theme:
     code: Roboto Mono
   features:
   - navigation.tabs
+# - navigation.indexes - only for insiders yet: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages
 
 extra_css:
   - stylesheets/extra.css

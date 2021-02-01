@@ -285,4 +285,4 @@ Most of the trucks don't have couplings, but if it's a trailer or a semi-trailer
 
 ##  Further reading
 
-* [How to publish your mod](/guides/how-to-publish-your-mod)
+* [How to publish your mod](/guides/basics/how-to-publish-your-mod)
