@@ -6,7 +6,7 @@
 
 * You Visual Studio installation should have [Visual Studio Tools for Unity][1] installed.
 
-## Install correct version of Unity 
+## Extract development files from Unity installation
 
 1. First, you need to determine what version of Unity used to build the game. To do so, see properties of `UnityPlayer.dll` file from the game folder. Under *Details* tab, there's *Product version* property. For example, if this property contains something like `2020.2.2.1234` we need **2020.2.2** version of Unity.
 1. [Download](https://unity3d.com/get-unity/download/archive) and install correct version (2020.2.2 in our case) of Unity. Don't choose any additional components other than Unity itself. It can be uninstalled after finishing this guide, so don't care much where you install it, but remember the folder.
@@ -22,7 +22,7 @@
 !!! important
     If the Unity version used to build the game will change, you'll need to repeat this guide using correct version.
 
-## Put the game into development mode
+## Put the game itself into development mode
 
 Open `VoxelTycoon_Data\boot.config` and add these strings:
 
