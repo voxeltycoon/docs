@@ -19,7 +19,7 @@
   --md-code-hl-comment-color: #615399;
   --md-code-hl-generic-color: var(--md-default-fg-color--light);
   --md-code-hl-variable-color:var(--md-default-fg-color--light);
-  --md-code-hl-color: hsla(#{hex2hsl($clr-yellow-a200)}, 0.5);
+  --md-code-hl-color: #ff008124;
 }
 
 .md-typeset h1 {

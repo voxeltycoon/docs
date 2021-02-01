@@ -57,6 +57,7 @@ google_analytics:
 
 # Extensions
 markdown_extensions:
+  - attr_list
   - admonition
   - codehilite:
       guess_lang: false
