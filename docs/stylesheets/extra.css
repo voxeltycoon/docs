@@ -80,3 +80,15 @@
 .md-footer {
   background: #0d0d19;
 }
+
+.md-content :not(.md-content__button):not(.md-icon)[href^='http']::after {
+  background-color: var(--md-primary-fg-color);
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  -webkit-mask: url(/images/icons/arrow-top-right-thick.svg)  no-repeat 50% 50%;
+  mask: url(/images/icons/arrow-top-right-thick.svg)  no-repeat 50% 50%;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  content: "";
+}
