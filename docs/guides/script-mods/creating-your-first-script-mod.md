@@ -160,6 +160,7 @@ As a conclusion, take a look at some points that were left outside of the scope 
 * One DLL can contain not just one code file, but any amount you need
 * Explore other callbacks `Mod` class provides, like `OnUpdate()` or `Initialize()` (called before any assets loaded)
 * Mods can read and write data to a save file using corresponding callbacks
+* You can debug your code by [writing logs](/guides/script-mods/debugging/writing-logs) or even [attaching a debugger](/guides/script-mods/debugging/attaching-a-debugger)
 * As stated at [Where's API documentation?](/assets/dll-asset/#wheres-api-documentation), feel free to explore the game code base for existent and possible APIs, and let us know what you think!
 
 Happy coding! 💜
