@@ -1,7 +1,6 @@
 # Animating locomotive rods
 
-!!! info
-    This guide is authored by Voxel Tycoon community member **scailman**.
+!!! quote "This guide is authored by Voxel Tycoon community member **scailman**"
 
 Steam locomotives and some diesel locomotives use rods to be able to move the wheels. In VT it's necessary to specify the position and rotation of each of rod so the game can animate them.
 

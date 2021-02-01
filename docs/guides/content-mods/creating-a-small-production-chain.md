@@ -1,7 +1,6 @@
 # Creating a small production chain
 
-!!! info
-    This guide is authored by Voxel Tycoon community member **scailman**.
+!!! quote "This guide is authored by Voxel Tycoon community member **scailman**"
 
 ## Introduction
 
