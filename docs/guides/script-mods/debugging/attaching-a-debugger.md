@@ -16,7 +16,7 @@
     | - | - |
     | `UnityPlayer.dll` | Replace the one in the game folder |
     | `WinPixEventRuntime.dll` | Replace the one in the game folder |
-    | `WindowsPlayer.dll` | Replace `VoxelTycoon.exe` in the game folder |
+    | `WindowsPlayer.exe` | Replace `VoxelTycoon.exe` in the game folder |
  <!-- copy `UnityPlayer.dll`, `WinPixEventRuntime.dll`, and `WindowsPlayer.exe` into the game folder, overwriting original files. Then rename `WindowsPlayer.exe` to `VoxelTycoon.exe`. After that, Unity can be uninstalled. -->
 
 !!! important
