@@ -10,7 +10,7 @@ Since [0.79](//voxeltycoon.xyz/changelog#0.79) you can create not only content-b
 
 ### Core concepts
 
-- The DLL file you want to get in the end essentially is a [.NET class library](https://docs.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio?tabs=csharp) targeting **.NET Standard 2.1** (or .NET 4.x) and containing one or more implementations of the [`Mod`](/documentation/VoxelTycoon/Modding/Mod) interface provided by Voxel Tycoon API.
+- The DLL file you want to get in the end essentially is a [.NET class library](https://docs.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio?tabs=csharp) targeting **.NET Standard 2.0** (or .NET 4.x) and containing one or more implementations of the [`Mod`](/documentation/VoxelTycoon/Modding/Mod) interface provided by Voxel Tycoon API.
 - In order to access Voxel Tycoon and Unity APIs you need to reference `Assembly-CSharp.dll` and `UnityEngine.CoreModule.dll` libraries that can be found in `VoxelTycoon_Data/Managed` directory inside the game folder.
 - Also, you might want to reference `UnityEngine.UI.dll` if you want to work with the game UI.
 - After you compile your library, the resulted .dll file is ready to be put into your mod directory and loaded by the game.
