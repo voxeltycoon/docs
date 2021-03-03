@@ -16,4 +16,4 @@ The game should know how to process these files, so content mods always use alre
 
 Script mod is a full-featured program. Contrary to content mods, you can create new behaviours and mechanics with script mods, as well as extending or modifing existing ones.
 
-[Getting started with script mods ➔](/guides/script-mods/creating-your-first-building-mod/)
+[Getting started with script mods ➔](/guides/script-mods/creating-your-first-script-mod/)
