@@ -8,8 +8,8 @@ title: mod.json
 
 ```json
 {
-    "Title" : "My first mod",
-    "Description" : "And that's my first mod description"
+  "Title": "My first mod",
+  "Description": "And that's my first mod description"
 }
 ```
 
