@@ -33,8 +33,8 @@ List of Voxel Tycoon scripting APIs (work in progress).
 ## Other resources
 
 - [Discord Server](https://discord.gg/voxeltycoon) (look for `#modding` channel)
-- [Suggestion tracker](https://github.com/voxeltycoon/suggestions/issues)
-- [Bug tracker](https://github.com/voxeltycoon/bug-tracker/issues)
+- [Suggestion tracker](https://github.com/voxeltycoon/issues/discussions)
+- [Bug tracker](https://github.com/voxeltycoon/issues/issues)
 - [Voxel Tycoon changelog](https://voxeltycoon.xyz/changelog)
 - [Samples source code](https://github.com/voxeltycoon/mods)
 - [Official website](https://voxeltycoon.xyz)
