@@ -12,7 +12,6 @@ The guide is not intended to teach you modeling, so you must have a basic unders
 
 As in all games, there are certain recommendations that must be followed when creating a 3d model.
 
-* The 3d model should not exceed 1500 triangles to avoid overloading the game in case we are going to create a building that will appear many times in cities.
 * The size of the building should not exceed 5x5x10m.
 * The model must have the minimum details that make it recognizable but without overloading the model.
 * The colors have to be pastel colors so that match the same style as the rest of the buildings in the game.
