@@ -4,6 +4,10 @@ title: mod.json
 
 `mod.json` is a mod metadata allowing the game to see and propery display your mod in the mod window. It should be located in the root of your mod folder.
 
+<!-- prettier-ignore -->
+!!! caution
+    Contents of this file are ignored after publishing the mod to Steam Workshop. Modify the title and description on the mod's workshop page.
+
 ## Structure
 
 ```json
