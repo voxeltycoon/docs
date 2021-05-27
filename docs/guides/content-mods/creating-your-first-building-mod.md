@@ -70,8 +70,8 @@ To edit the game files we only need a text editor such as Notepad ++, or Visual 
   "CanHaveDemand": false,
   "Size": {
     "X": 6,
-    "Y": 4,
-    "Z": 4
+    "Z": 4,
+    "Y": 4
   },
   "Liveries": {
     "default": {
