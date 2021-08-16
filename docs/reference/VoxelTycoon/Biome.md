@@ -101,9 +101,9 @@ Declaration
 public DisplayString DisplayName { get; set; }
 ```
 
-| Type          | Description                                                  |
-| ------------- | ------------------------------------------------------------ |
-| DisplayString | String (and optional format) representing the biome's string |
+| Type                              | Description                                                |
+| --------------------------------- | ---------------------------------------------------------- |
+| [DisplayString](./DisplayString) | String (and optional format) representing the biome's name |
 
 ### Hidden
 
@@ -135,7 +135,7 @@ public float Humidity { get; set; }
 
 ### LiveryTag
 
-Biome's livery tag **?**
+Biome's livery tag.
 
 Declaration
 
