@@ -6,7 +6,7 @@ Since [0.79](//voxeltycoon.xyz/changelog#0.79) you can create not only content-b
 
 ## How it works
 
-`.dll` asset is treated by the game as any other mod asset, so as you placed it in your mod folder, the game will found and load it. However, the process of creating the DLL file itself differs greatly from the other assets.
+`.dll` asset is treated by the game as any other mod asset, so when you place it in your mod folder, the game will find and load it. However, the process of creating the DLL file itself differs greatly from the other assets.
 
 ### Core concepts
 
