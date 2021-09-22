@@ -32,6 +32,9 @@ extra_css:
 
 # Extras
 extra:
+  analytics:
+    provider: google
+    property: UA-37507673-9
   social:
     - icon: fontawesome/brands/steam
       link: https://voxeltycoon.xyz/buy
@@ -50,11 +53,6 @@ plugins:
       minify_html: true
   - git-revision-date-localized
   - awesome-pages
-
-# Google Analytics
-google_analytics:
-  - UA-37507673-9
-  - auto
 
 # Extensions
 markdown_extensions:
