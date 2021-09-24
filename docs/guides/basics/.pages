@@ -2,4 +2,5 @@ arrange:
   - index.md
   - asset-uri.md
   - mod.json.md
+  - localization.md
   - how-to-publish-your-mod.md
