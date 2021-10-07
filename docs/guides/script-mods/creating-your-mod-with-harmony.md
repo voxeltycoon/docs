@@ -193,10 +193,11 @@ protected override void OnUpdate()
         // TestMsg.ShowAtScreenCenter("TestMsg", 5);
     }
 
-
     if (InputHelper.RightMouseDown)
     {
-        OverlayMessage.ShowAtScreenCenter("OverlayMessage", 5);
+        OverlayMessage.ShowStacked("countTestMsg: " + TestMsgPatch.countTestMsg, 2);
+        OverlayMessage.ShowStacked("countOverlayMessage: " + TestMsgPatch.countOverlayMessage, 2);
+        OverlayMessage.ShowStacked("countOther: " + TestMsgPatch.countOther, 2);
     }
 }
 ```
@@ -261,15 +262,14 @@ class TestMsg : OverlayPopup
 
     public float Lifetime { get; set; }
 
-    /*
-    protected internal override void InitializeFrame()
+    protected override void InitializeFrame()
     {
         base.InitializeFrame();
         this._message = this.transform.AddUIChild("Message").AddComponent<UnityEngine.UI.Text>();
         this._message.font = R.Fonts.OpenSans.OpenSansRegular;
         this._message.color = Color.white;
         this.Padding = new RectOffset(15, 15, 8, 8);
-    }*/
+    }
 
     protected override void OnShow()
     {
@@ -351,57 +351,48 @@ class TestMsg : OverlayPopup
 }
 ```
 
-Тут можно найти закоментированный блок. Это важная часть класса. Без неё работать наш мод не будет. Если мы попробуем разкоментировать его, то у нас появится предупреждение о том, что мы не можем перегружать поля у которых выставлен модификатор `internal`. Как тогда нам быть? Тут и приходит на помощь `harmony`.
-
-И так, давайте добавим ещё один класс после `TestMsg`.
+Все уже почти готово к работе. Добавим теперь особый функционал. Будем подсчитывать сколько сообщений отправили через наш класс `TestMsg`, и сколько через класс `OverlayMessage`. Для этого воспользуемся патчером и перехватим общее событие `InitializeFrame` для наших классов. Повесим на него нашу функцию `InitializeFramePatchPostFix` и в ней будем подсчитывать количество отправленных сообщений.
 
 ```csharp
 [HarmonyPatch]
 class TestMsgPatch
 {
+    int static countTestMsg = 0;
+    int static countOverlayMessage = 0;
+    int static countOther = 0;
+
     [HarmonyPostfix]
     [HarmonyPatch(typeof(OverlayPopup), "InitializeFrame")]
     protected static void InitializeFramePatchPostFix(TestMsg __instance)
     {
-        if (__instance.GetType() != typeof(TestMsg)) return;
+        if (__instance.GetType() != typeof(TestMsg))
+        {
+            countTestMsg++;
+        }
+        else if(__instance.GetType() != typeof(OverlayMessage))
+        {
+            countOverlayMessage++;
+        }
+        else
+        {
+            countOther++;
+        }
 
-        VTFirstModeHarmonyMod.Logger.Log("===============================.");
-        VTFirstModeHarmonyMod.Logger.Log("InitializeFramePatchPostFix.");
-        VTFirstModeHarmonyMod.Logger.Log("===============================.");
-
-        __instance._message = __instance.transform.AddUIChild("Message").AddComponent<UnityEngine.UI.Text>();
-        __instance._message.font = R.Fonts.OpenSans.OpenSansRegular;
-        __instance._message.color = Color.white;
-        __instance.Padding = new RectOffset(15, 15, 8, 8);
+        return;
     }
 }
 ```
 
-Здесь мы создаем класс с патчами через гармонию. Что бы они работали, класс нужно пропатчивать, поэтому нам нужно было создать его отдельно.
-В данном коде мы указываем `Harmony` вызывать функцию `InitializeFramePatchPostFix` после метода `InitializeFrame`. Возникает проблема следующего характера: этот код будет срабатывать на все классы которые наследуются от класса `OverlayPopup`. Что бы отфильтровать только наш класс, первым делом мы выставляем проверку на тип:
+Вот мы и создали класс с функцией-патчером через гармонию. Что бы он работал, класс нужно пропатчивать, поэтому нам нужно было создать его отдельно.
+В данном коде мы указываем `Harmony` вызывать функцию `InitializeFramePatchPostFix` после метода `InitializeFrame`. Этот код будет срабатывать на все классы которые наследуются от класса `OverlayPopup`. Что бы правильно считать каждый класс мы их будем фильтровать с помощью такого кода:
 
 ```csharp
-if (__instance.GetType() != typeof(TestMsg)) return;
+if (__instance.GetType() != typeof(TestMsg)) {};
 ```
 
-Она и не дает выполняться нашему коду нигде кроме класса `TestMsg`.
+Далее в каждом из вариантов условия мы ведем подсчет в специально выделенную переменную.
 
-Далее в коде мы видим логи, для того что бы быть увереным что всё работает как надо.
-
-```csharp
-VTFirstModeHarmonyMod.Logger.Log("===============================.");
-VTFirstModeHarmonyMod.Logger.Log("InitializeFramePatchPostFix.");
-VTFirstModeHarmonyMod.Logger.Log("===============================.");
-```
-
-И после логов мы вставили те самые 4 строчки кода, которые были в оригинальном методе `InitializeFrame` из класса `OverlayMessage`.
-
-```csharp
-__instance._message = __instance.transform.AddUIChild("Message").AddComponent<UnityEngine.UI.Text>();
-__instance._message.font = R.Fonts.OpenSans.OpenSansRegular;
-__instance._message.color = Color.white;
-__instance.Padding = new RectOffset(15, 15, 8, 8);
-```
+На всякий случай мы объявили переменную для всех других классов и назвали её `countOther`. В ней подсчитываются другие классы, которые мы не перехватывем но они так же наслеовались от класса `OverlayPopup`.
 
 На этом закончим редактировать файл `TestMsg.cs`.
 
@@ -461,7 +452,9 @@ namespace VTFirstModeHarmony
 
             if (InputHelper.RightMouseDown)
             {
-                OverlayMessage.ShowAtScreenCenter("OverlayMessage", 5);
+                OverlayMessage.ShowStacked("countTestMsg: " + TestMsgPatch.countTestMsg, 2);
+                OverlayMessage.ShowStacked("countOverlayMessage: " + TestMsgPatch.countOverlayMessage, 2);
+                OverlayMessage.ShowStacked("countOther: " + TestMsgPatch.countOther, 2);
             }
         }
 
@@ -504,15 +497,14 @@ namespace VTFirstModeHarmony
 
         public float Lifetime { get; set; }
 
-        /*
-        protected internal override void InitializeFrame()
+        protected override void InitializeFrame()
         {
           base.InitializeFrame();
           this._message = this.transform.AddUIChild("Message").AddComponent<UnityEngine.UI.Text>();
           this._message.font = R.Fonts.OpenSans.OpenSansRegular;
           this._message.color = Color.white;
           this.Padding = new RectOffset(15, 15, 8, 8);
-        }*/
+        }
 
         protected override void OnShow()
         {
@@ -596,19 +588,28 @@ namespace VTFirstModeHarmony
     [HarmonyPatch]
     class TestMsgPatch
     {
+        int static countTestMsg = 0;
+        int static countOverlayMessage = 0;
+        int static countOther = 0;
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(OverlayPopup), "InitializeFrame")]
         protected static void InitializeFramePatchPostFix(TestMsg __instance)
         {
-            if (__instance.GetType() != typeof(TestMsg)) return;
+            if (__instance.GetType() != typeof(TestMsg))
+            {
+                countTestMsg++;
+            }
+            else if(__instance.GetType() != typeof(OverlayMessage))
+            {
+                countOverlayMessage++;
+            }
+            else
+            {
+                countOther++;
+            }
 
-            VTFirstModeHarmonyMod.Logger.Log("===============================.");
-            VTFirstModeHarmonyMod.Logger.Log("InitializeFramePatchPostFix.");
-            VTFirstModeHarmonyMod.Logger.Log("===============================.");
-            __instance._message = __instance.transform.AddUIChild("Message").AddComponent<UnityEngine.UI.Text>();
-            __instance._message.font = R.Fonts.OpenSans.OpenSansRegular;
-            __instance._message.color = Color.white;
-            __instance.Padding = new RectOffset(15, 15, 8, 8);
+            return;
         }
     }
 }
@@ -624,6 +625,6 @@ C:\Windows\Microsoft.NET\Framework64\v4.0.30319
 
 Его нужно положить в туже папку, где лежит ваш мод `VTFirstModeHarmony`
 
-Теперь мы можем запустить игру и начать новую игру. По нажатию на правую кнопку мыши мы увидем сообщение `OverlayMessage` через класс `OverlayMessage`. При нажатии на левую кнопку мыши мы увидем сообщение `TestMsg` через класс `TestMsg`.
+Теперь мы можем запустить игру и начать новую игру. По нажатию на правую кнопку мыши мы увидем 3 сообщение с количеством выведенных сообщений через каждый класс. При нажатии на левую кнопку мыши мы увидем сообщение `TextMsg` через класс `TextMsg`.
 
 Спасибо за внимание. Удачной разработки!
