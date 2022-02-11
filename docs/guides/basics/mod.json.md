@@ -9,9 +9,42 @@ title: mod.json
 ```json
 {
     "Title" : "My first mod",
-    "Description" : "And that's my first mod description"
+    "Description" : "And that's my first mod description",
+    "Tags": "[Tag], [Another Tag]"
 }
 ```
+
+Available tags:
+
+     Industries
+     Researches
+     Biomes
+     Gameplay
+     Utils
+     Visuals
+     Other
+
+Vehicles
+
+     Steam locomotives
+     Diesel locomotives
+     Electric locomotives
+     Passenger wagons
+     Gasoline trucks
+     Diesel trucks
+     Gasoline buses
+     Diesel buses
+     Other vehicles
+
+Buildings
+
+     Factories
+     Houses
+     Rails
+     Roads
+     Stations
+     Decorations
+     Other Buildings
 
 ## PublishedFileId
 
