@@ -1,28 +1,16 @@
 # How to publish your mod
 
-!!! warning "Obsolete"
-    This guide is for versions prior `0.85`. New guide is coming soon.
+!!! note
+    This guide is for version  `0.87`.
 
 ## Introduction
 
-This step-by-step guide is intended for mod creators who want to feature their creations on the in-game Mod Gallery. Like this:
+This step-by-step guide is intended for mod creators who want to feature their creations on the [Steam Workshop](https://steamcommunity.com/app/732050/workshop/) and the in-game Mod Gallery. Like this:
 
-![20180514-192535](https://user-images.githubusercontent.com/1748681/78776106-042ce200-79a0-11ea-8131-852ba1d15bcc.png)
-
-!!! note
-    Current implementation is temporary. After the release of the game on Steam, we will incorporate Steam Workshop support, so the publishing process may change.
-
-## Obtain credentials
-
-If you want to become a publisher, you should obtain credentials so our servers can identify you as an Author. We do not have a user interface for registration at the moment, so please contact **@devs** on our [Discord server](//discord.gg/64KPWd5).
+![](/images/how-to-publish-your-mod/mod-browser.png)
 
 !!! check "EULA"
     Please ensure that you have read and agreed with our [EULA](//voxeltycoon.xyz/eula) before publishing mods.
-
-You will receive an `identity.json` file - this is your key to publishing access. Put the file into the root of your `Content/` folder. Next time the game runs, it will know that you are an Author.
-
-!!! important
-    Do not share identity file with anyone. If you do, any person that has it can publish, update or remove your mods in the Gallery.
 
 ## Prepare mod for publishing
 
@@ -37,21 +25,19 @@ Create a new `.txt` file, rename it to `mod.json`, and place it in your mod's ro
 ```json
 {
     "Title" : "My awesome mod",
-    "Description" : "This mod contains some cool stuff!"
+    "Description" : "This mod contains some cool stuff!",
+    "Tags": "[Tag], [Another Tag?]"
 }
 ```
+For more information on available tags, check [mod.json](/guides/basics/mod.json) page.
 
 ## Publish, update, and unpublish
 
-Just click on your mod in the **Installed** tab, and choose the appropriate action.
+Just scroll to your mod, and choose the appropriate action.
 
-![20180514-193710](https://user-images.githubusercontent.com/1748681/78776110-04c57880-79a0-11ea-87cc-67dcc39c14f6.png)
+![](/images/how-to-publish-your-mod/publish-mod.png)
 
 !!! note
     You can publish only mods that are not tracked as **installed**, i.e. was not downloaded from the gallery but manually placed to `Content/` by you.
 
-If you are updating a mod that is already published, users that have it installed will see that an update is available for it.
-
-## Limits
-
-To prevent our servers from being completely filled with content, we're temporarily restricting how many packs users can publish. Your limit can be seen at  [https://voxeltycoon-mods.herokuapp.com/limits?uid=`your_secret_key`](https://voxeltycoon-mods.herokuapp.com/limits?uid=your_secret_key), where "your_secret_key" is the one stored in your specific `identity.json` file.
+If you are updating a mod that is already published, users that have it installed, Steam should download it automatically upon game launch.
