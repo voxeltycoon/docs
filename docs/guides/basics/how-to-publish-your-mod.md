@@ -1,43 +1,23 @@
 # How to publish your mod
 
-!!! note
-    This guide is for version  `0.87`.
-
-## Introduction
-
-This step-by-step guide is intended for mod creators who want to feature their creations on the [Steam Workshop](https://steamcommunity.com/app/732050/workshop/) and the in-game Mod Gallery. Like this:
-
-![](/images/how-to-publish-your-mod/mod-browser.png)
-
 !!! check "EULA"
     Please ensure that you have read and agreed with our [EULA](//voxeltycoon.xyz/eula) before publishing mods.
 
-## Prepare mod for publishing
+First, check your [mod.json](/guides/basics/mod.json) for minimal required structure.
 
-### Add preview image
+Then, you need to prepare cover image of your mod. Save it as `preview.png` at the root of your mod folder. The image should be square and its dimensions should be at least `512x512` pixels.
 
-Take a screenshot of your mod in action, and save it as `preview.png`. Drop the image into your mod's root folder. It should be square and its dimensions should be at least `512x512` pixels.
-
-### Set custom title and description
-
-Create a new `.txt` file, rename it to `mod.json`, and place it in your mod's root folder. Its contents should be set up as follows:
-
-```json
-{
-    "Title" : "My awesome mod",
-    "Description" : "This mod contains some cool stuff!",
-    "Tags": "[Tag], [Another Tag?]"
-}
-```
-For more information on available tags, check [mod.json](/guides/basics/mod.json) page.
+!!! tip
+    Pressing `F5` in the mod browser causes the game to reload mods metadata without need to reload the game.
 
 ## Publish, update, and unpublish
 
-Just scroll to your mod, and choose the appropriate action.
+Just scroll to your mod in the in-game browser, and choose the appropriate action.
 
 ![](/images/how-to-publish-your-mod/publish-mod.png)
 
-!!! note
-    You can publish only mods that are not tracked as **installed**, i.e. was not downloaded from the gallery but manually placed to `Content/` by you.
+## Mod visiblity
 
-If you are updating a mod that is already published, users that have it installed, Steam should download it automatically upon game launch.
+After your mod got published to the Workshop, it's only visible to you by default. You need to manually change it visibility to public when you are ready. It could take up to 30 minutes before the mod become avaible to anyone.
+
+You can control visibility and other settings (for example, localize mod's title and decription) on your mod's page.
