@@ -63,6 +63,7 @@
 .md-typeset .admonition, .md-typeset details {
   border-left: none;
   border-radius: 0.4rem;
+  overflow: hidden;
 }
 
 .md-typeset pre>code {
