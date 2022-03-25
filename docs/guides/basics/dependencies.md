@@ -21,5 +21,5 @@ String values are refer to local mods, and numbers are refer to published mods (
 
 ## Soft/hard dependencies
 
-Currently, all dependencies are soft. This means that if a mod on which your mod depends is not found, the game will try to load your mod anyways.
+Currently, all dependencies are soft. This means that if a mod on which your mod depends has not found, the game will try to load your mod anyway.
 
