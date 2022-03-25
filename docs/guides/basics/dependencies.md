@@ -2,7 +2,7 @@
 
 If your mod depends on some other mod or mods, you can explicity state it. This will serve two purposes:
 
-* When the player subscribres to your mod, Steam will suggest the player to subscribe to mods that your mod is using
+* When the player subscribes to your mod, Steam will suggest the player to subscribe to mods that your mod is using
 * The game will ensure that those mods are loaded prior your mod
 
 ## Setting up dependcies
