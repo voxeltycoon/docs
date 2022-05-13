@@ -134,7 +134,7 @@ That's it! Our brilliant mod is almost ready to be put in the game.
 
 ### Compile the mod into a DLL
 
-Now we need to compile our source code to a DLL file that can be put into the game. To do this, just hit <kbd>F6</kbd>. Yeah, that easy!
+Now we need to compile our source code to a DLL file that can be put into the game. To do this, select *Build* ➔ *Build Solution* in the Visual Studio top menu.
 
 After the build process successfully finishes, you will find the result DLL at the `<project location>/bin/Debug/netstandard2.0/<project name>.dll` directory.
 
