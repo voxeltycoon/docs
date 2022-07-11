@@ -286,7 +286,7 @@ Follow the steps below:
 
 1. Build your project into a .dll-file
 2. Locate your .dll-file and place it in `Content/<your_mod_folder>`
-3. Create a [mod.json file](/guides/basics/mods.json)
+3. Create a [mod.json file](/guides/basics/mod.json/)
 4. Start Voxel Tycoon and start a new game with your just created mod activated
 5. Wait for your game to load...
 6. **CLICK THAT NOTIFICATION!!!**
