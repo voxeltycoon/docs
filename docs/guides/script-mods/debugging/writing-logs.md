@@ -27,6 +27,6 @@ This file can be found in the next locations:
 
 | Platform | |
 | - | - |
-| Windows | C:\Users\username\AppData\LocalLow\CompanyName\ProductName\Player.log |
-| macOS	| ~/Library/Logs/Company Name/Product Name/Player.log |
-| Linux	| ~/.config/unity3d/CompanyName/ProductName/Player.log |
+| Windows | %appdata%/../LocalLow/VoxelTycoon/VoxelTycoon/Player.log |
+| macOS	| ~/Library/Logs/VoxelTycoon/VoxelTycoon/Player.log |
+| Linux	| ~/.config/unity3d/VoxelTycoon/VoxelTycoon/Player.log |
