@@ -18,14 +18,30 @@ theme:
   logo: images/logo.png
   favicon: images/favicon.png
   palette:
-    scheme: vt
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/theme-light-dark
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/theme-light-dark
+        name: Switch to light mode
 
   font:
     text: Roboto
     code: Roboto Mono
   features:
   - navigation.tabs
-# - navigation.indexes - only for insiders yet: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages
+  - navigation.indexes
 
 extra_css:
   - stylesheets/extra.css
