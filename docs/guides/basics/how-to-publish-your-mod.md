@@ -8,7 +8,7 @@ First, check your [mod.json](/guides/basics/mod.json) for minimal required struc
 Then, you need to prepare cover image of your mod. Save it as `preview.png` at the root of your mod folder. The image should be square and its dimensions should be at least `512x512` pixels.
 
 !!! tip
-    Pressing `F5` in the mod browser causes the game to reload mods metadata without need to reload the game.
+    Pressing <kbd>F5</kbd> in the mod browser causes the game to reload mods metadata without need to reload the game.
 
 ## Publish, update, and unpublish
 
