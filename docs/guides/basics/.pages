@@ -3,3 +3,4 @@ arrange:
   - asset-uri.md
   - mod.json.md
   - how-to-publish-your-mod.md
+  - dependencies.md

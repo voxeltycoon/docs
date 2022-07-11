@@ -10,7 +10,7 @@ hide:
 This is the official modding documentation for [Voxel Tycoon](https://voxeltycoon.xyz) — a tycoon strategy game about transportation, factories, and mining infinite voxel landscapes.
 
 !!! note "Work in progress"
-    The documentation is - obviously - work in progress. Please feel free to [contribute!](https://github.com/voxeltycoon/docs)
+    The documentation is **obviously** work in progress. Please feel free to [contribute!](https://github.com/voxeltycoon/docs)
 
 ## Getting started
 
@@ -32,7 +32,7 @@ List of Voxel Tycoon scripting APIs (work in progress).
 
 ## Other resources
 
-- [Discord Server](https://discord.gg/voxeltycoon) (look for `#modding` channel)
+- [Discord Server](https://discord.gg/voxeltycoon) (look for the `#modding` channel)
 - [Suggestion tracker](https://github.com/voxeltycoon/issues/discussions)
 - [Bug tracker](https://github.com/voxeltycoon/issues/issues)
 - [Voxel Tycoon changelog](https://voxeltycoon.xyz/changelog)
