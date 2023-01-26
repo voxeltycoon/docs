@@ -15,3 +15,6 @@ This is the respository backing the official [modding documentation](https://doc
 1. Run `mkdocs serve`.
 2. Go to [http://localhost:8000](http://localhost:8000).
 3. Pages will automatically refresh as you apply changes to sources.
+
+## Talk to community
+<a href="//discord.gg/voxeltycoon"><img src="https://discordapp.com/api/guilds/346672255084003329/embed.png?style=banner2"/></a>
