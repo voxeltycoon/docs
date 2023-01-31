@@ -14,12 +14,6 @@
   background-color: var(--md-header-bg-color);
 }
 
-.md-typeset .admonition, .md-typeset details {
-  border-left: none;
-  border-radius: 0.2rem;
-  overflow: hidden;
-}
-
 .md-typeset pre>code {
   border-radius: 0.2rem;
 }
