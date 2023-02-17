@@ -10,7 +10,7 @@ title: mod.json
 {
     "Title" : "My first mod",
     "Description" : "And that's my first mod description",
-    "Tags": [ "Tag1", "Tag2" ]
+    "Tags": [ "Tag 1", "Tag 2" ]
 }
 ```
 
@@ -20,7 +20,7 @@ title: mod.json
 | - | - |
 | Title | Used only when publishing a new Steam mod. To change a title for an already published mod, use Steam Workshop Dashboard for your item. |
 | Description | Used only when publishing a new Steam mod. To change a description for an already published mod, use Steam Workshop Dashboard for your item. |
-| Tags | An array of Steam Workshop tags. For the list of available tags check the [Workshop page](https://steamcommunity.com/app/732050/workshop/). |
+| Tags | An array of Steam Workshop tags. For the list of available tags check the [Workshop page](https://steamcommunity.com/app/732050/workshop/) (note that tag string values should exactly match those from the Workshop page). |
 | Dependencies | An array of [dependencies](/guides/basics/dependencies/). Used only for local testing. To set up dependencies for a published mod, use Steam Workshop Dashboard for your item. |
 | PublishedFileId | After uploading mod to Steam, `PublishedFileId` property will be added to your `mod.json`. It's the ID of your mod on Steam (you can see it in the mod's Workshop page url). This way, the game knows a relation between your local mod and the published one. Don't remove this property, or you won't be able to update your mod until you add it back. |
 
