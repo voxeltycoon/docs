@@ -48,7 +48,7 @@ Now, we need to add references to libraries that contain APIs we want to access.
 
 ![](/images/dll-mod-tutorial/dll-mod-tutorial-4.png)
 
-*Reference Manager* window will appear. Hit *Browse* on the left (1) then *Browse* at the bottom (2) and select `Assembly-CSharp.dll` and `UnityEngine.CoreModule.dll` libraries that can be found in `VoxelTycoon_Data/Managed` directory inside the game folder (3):
+*Reference Manager* window will appear. Hit *Browse* on the left (1) then *Browse* at the bottom (2) and select `VoxelTycoon.dll` and `UnityEngine.CoreModule.dll` libraries that can be found in `VoxelTycoon_Data/Managed` directory inside the game folder (3):
 
 ![](/images/dll-mod-tutorial/dll-mod-tutorial-5.png)
 
