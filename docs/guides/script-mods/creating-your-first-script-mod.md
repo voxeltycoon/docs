@@ -136,7 +136,7 @@ That's it! Our brilliant mod is almost ready to be put in the game.
 
 Now we need to compile our source code to a DLL file that can be put into the game. To do this, select *Build* ➔ *Build Solution* in the Visual Studio top menu.
 
-After the build process successfully finishes, you will find the result DLL at the `<project location>/bin/Debug/netstandard2.0/<project name>.dll` directory.
+After the build process successfully finishes, you will find the result DLL at the `<project location>/bin/Debug/netstandard2.1/<project name>.dll` directory.
 
 !!! note
     Depending on chosen [build configuration](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-set-debug-and-release-configurations?view=vs-2019), the DLL may be built to `Release` directory instead of `Debug`. 
