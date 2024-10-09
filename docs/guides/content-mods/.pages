@@ -3,6 +3,7 @@ arrange:
   - creating-your-first-locomotive-mod.md
   - animating-locomotive-rods.md
   - creating-your-first-truck-mod.md
+  - creating-vehicle-interior.md
   - creating-a-small-production-chain.md
   - creating-a-new-track-type-mod.md
   - using-audio-files.md
