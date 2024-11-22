@@ -126,3 +126,5 @@ Each subsection includes:
 To add realism to the interior view, once the interior is modeled and configured, colors can be set in the Asset Editor to emit a bit of light at night, giving the impression of interior lighting. Set the **Emission** slider to a value of 125 for this effect.
 
 ![](/images/creating-vehicle-interior/3.png)
+
+Also, don’t forget to add the `With interior` tag to the [mod.json](/guides/basics/mod.json/) before publishing an update to your mod.
